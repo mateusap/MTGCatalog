@@ -1,0 +1,11 @@
+E:\Visual Studio\MTGCatalog\MTGCatalog\bin\Debug\MTGCatalog.exe.config
+E:\Visual Studio\MTGCatalog\MTGCatalog\bin\Debug\MTGCatalog.exe
+E:\Visual Studio\MTGCatalog\MTGCatalog\bin\Debug\MTGCatalog.pdb
+E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.csproj.AssemblyReference.cache
+E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.csproj.SuggestedBindingRedirects.cache
+E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.FormHome.resources
+E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.Properties.Resources.resources
+E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.csproj.GenerateResource.cache
+E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.csproj.CoreCompileInputs.cache
+E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.exe
+E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.pdb
