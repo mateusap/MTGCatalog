@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestSharp.Deserializers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -79,13 +80,13 @@ namespace MTGCatalog.Services
             public bool reprint { get; set; }
             public bool variation { get; set; }
 
-            [JsonPropertyName("set_id")]
+            [DeserializeAs(Name ="set_id")]
             public string set__id { get; set; }
             public string set { get; set; }
-            [JsonPropertyName("set_name")]
+            [DeserializeAs(Name ="set_name")]
             public string set__name { get; set; }
             public string set_type { get; set; }
-            [JsonPropertyName("set_uri")]
+            [DeserializeAs(Name = "set_uri")]
             public string set__uri { get; set; }
             public string set_search_uri { get; set; }
             public string scryfall_set_uri { get; set; }

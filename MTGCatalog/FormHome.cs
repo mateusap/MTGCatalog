@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using MTGCatalog.Services;
 
 namespace MTGCatalog
 {
@@ -19,18 +20,32 @@ namespace MTGCatalog
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
+        private Services.APIService APISearch;
         public FormHome()
         {
             InitializeComponent();
             btnRestaurar.Visible = false;
             pnlCorCMC.Visible = false;
             pnlEfeito.Visible = false;
-            pnlNome .Visible = false;
-            pnlStatus .Visible = false;
-            pnlTipo .Visible = false;
+            pnlResultado.Visible = false;
+            pnlStatus.Visible = false;
+            pnlTipo.Visible = false;
+            pnlNome.Visible = false;
+            APISearch = new APIService();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ResultadoNome (CardModel.Datum resultado)
+        {
+            lblNomeR.Text = resultado.name;
+            lblCmcR.Text = resultado.cmc.ToString();
+            lblCorR.Text = String.Join(", ", resultado.colors.Select(x=>x));
+            lblSetR.Text = resultado.set__name;
+            lblRarityR.Text = resultado.rarity.ToUpper();
+            lblTextR.Text = resultado.oracle_text;
+            pBoxCard.Load(resultado.image_uris.normal);
+        }
+
+        private void btnMaximizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
             btnRestaurar.Visible = true;
@@ -66,6 +81,7 @@ namespace MTGCatalog
         private void btnBuscaNome_Click(object sender, EventArgs e)
         {
             pnlNome.Visible = true;
+            pnlResultado.Visible = true;
         }
 
         private void btnBuscaEfeito_Click(object sender, EventArgs e)
@@ -86,6 +102,11 @@ namespace MTGCatalog
         private void btnStatus_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBuscarNome_Click(object sender, EventArgs e)
+        {
+            ResultadoNome(APISearch.GetCard(tBoxNome.Text));
         }
     }
 }
