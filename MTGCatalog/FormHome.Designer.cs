@@ -48,13 +48,14 @@
             this.pnlCorCMC = new System.Windows.Forms.Panel();
             this.pnlTipo = new System.Windows.Forms.Panel();
             this.pnlStatus = new System.Windows.Forms.Panel();
+            this.tBoxNome = new System.Windows.Forms.TextBox();
             this.panelCabecalho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPicture)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.pnlNome.SuspendLayout();
-            this.pnlEfeito.SuspendLayout();
             this.pnlCorCMC.SuspendLayout();
             this.pnlTipo.SuspendLayout();
+            this.pnlStatus.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelCabecalho
@@ -161,6 +162,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.panelMenu.Controls.Add(this.pnlStatus);
             this.panelMenu.Controls.Add(this.btnStatus);
             this.panelMenu.Controls.Add(this.btnBuscaTipo);
             this.panelMenu.Controls.Add(this.btnBuscaCorCMC);
@@ -267,7 +269,7 @@
             // 
             // pnlNome
             // 
-            this.pnlNome.Controls.Add(this.pnlEfeito);
+            this.pnlNome.Controls.Add(this.tBoxNome);
             this.pnlNome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlNome.Location = new System.Drawing.Point(136, 30);
             this.pnlNome.Name = "pnlNome";
@@ -276,38 +278,45 @@
             // 
             // pnlEfeito
             // 
-            this.pnlEfeito.Controls.Add(this.pnlCorCMC);
-            this.pnlEfeito.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlEfeito.Location = new System.Drawing.Point(0, 0);
+            this.pnlEfeito.BackColor = System.Drawing.Color.Orange;
+            this.pnlEfeito.Location = new System.Drawing.Point(17, 7);
             this.pnlEfeito.Name = "pnlEfeito";
-            this.pnlEfeito.Size = new System.Drawing.Size(617, 330);
+            this.pnlEfeito.Size = new System.Drawing.Size(34, 47);
             this.pnlEfeito.TabIndex = 0;
             // 
             // pnlCorCMC
             // 
-            this.pnlCorCMC.Controls.Add(this.pnlTipo);
-            this.pnlCorCMC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCorCMC.Location = new System.Drawing.Point(0, 0);
+            this.pnlCorCMC.BackColor = System.Drawing.SystemColors.Info;
+            this.pnlCorCMC.Controls.Add(this.pnlEfeito);
+            this.pnlCorCMC.Location = new System.Drawing.Point(8, 9);
             this.pnlCorCMC.Name = "pnlCorCMC";
-            this.pnlCorCMC.Size = new System.Drawing.Size(617, 330);
+            this.pnlCorCMC.Size = new System.Drawing.Size(67, 57);
             this.pnlCorCMC.TabIndex = 0;
             // 
             // pnlTipo
             // 
-            this.pnlTipo.Controls.Add(this.pnlStatus);
-            this.pnlTipo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTipo.Location = new System.Drawing.Point(0, 0);
+            this.pnlTipo.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pnlTipo.Controls.Add(this.pnlCorCMC);
+            this.pnlTipo.Location = new System.Drawing.Point(20, 13);
             this.pnlTipo.Name = "pnlTipo";
-            this.pnlTipo.Size = new System.Drawing.Size(617, 330);
+            this.pnlTipo.Size = new System.Drawing.Size(69, 69);
             this.pnlTipo.TabIndex = 0;
             // 
             // pnlStatus
             // 
-            this.pnlStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlStatus.Location = new System.Drawing.Point(0, 0);
+            this.pnlStatus.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlStatus.Controls.Add(this.pnlTipo);
+            this.pnlStatus.Location = new System.Drawing.Point(41, 281);
             this.pnlStatus.Name = "pnlStatus";
-            this.pnlStatus.Size = new System.Drawing.Size(617, 330);
+            this.pnlStatus.Size = new System.Drawing.Size(82, 61);
             this.pnlStatus.TabIndex = 0;
+            // 
+            // tBoxNome
+            // 
+            this.tBoxNome.Location = new System.Drawing.Point(68, 44);
+            this.tBoxNome.Name = "tBoxNome";
+            this.tBoxNome.Size = new System.Drawing.Size(100, 20);
+            this.tBoxNome.TabIndex = 1;
             // 
             // FormHome
             // 
@@ -329,9 +338,10 @@
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             this.pnlNome.ResumeLayout(false);
-            this.pnlEfeito.ResumeLayout(false);
+            this.pnlNome.PerformLayout();
             this.pnlCorCMC.ResumeLayout(false);
             this.pnlTipo.ResumeLayout(false);
+            this.pnlStatus.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -357,6 +367,7 @@
         private System.Windows.Forms.Panel pnlCorCMC;
         private System.Windows.Forms.Panel pnlTipo;
         private System.Windows.Forms.Panel pnlStatus;
+        private System.Windows.Forms.TextBox tBoxNome;
     }
 }
 

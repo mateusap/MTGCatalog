@@ -65,7 +65,7 @@ namespace MTGCatalog
 
         private void btnBuscaNome_Click(object sender, EventArgs e)
         {
-
+            pnlNome.Visible = true;
         }
 
         private void btnBuscaEfeito_Click(object sender, EventArgs e)
