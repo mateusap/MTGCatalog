@@ -30,3 +30,5 @@ E:\Visual Studio\MTGCatalog\MTGCatalog\bin\Debug\System.Text.Json.xml
 E:\Visual Studio\MTGCatalog\MTGCatalog\bin\Debug\System.Threading.Tasks.Extensions.xml
 E:\Visual Studio\MTGCatalog\MTGCatalog\bin\Debug\System.ValueTuple.xml
 E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.csproj.CopyComplete
+E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.FormNome.resources
+E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.FormEfeito.resources

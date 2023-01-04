@@ -20,29 +20,12 @@ namespace MTGCatalog
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
-        private Services.APIService APISearch;
+        
         public FormHome()
         {
             InitializeComponent();
             btnRestaurar.Visible = false;
-            pnlCorCMC.Visible = false;
-            pnlEfeito.Visible = false;
-            pnlResultado.Visible = false;
-            pnlStatus.Visible = false;
-            pnlTipo.Visible = false;
-            pnlNome.Visible = false;
-            APISearch = new APIService();
-        }
-
-        private void ResultadoNome (CardModel.Datum resultado)
-        {
-            lblNomeR.Text = resultado.name;
-            lblCmcR.Text = resultado.cmc.ToString();
-            lblCorR.Text = String.Join(", ", resultado.colors.Select(x=>x));
-            lblSetR.Text = resultado.set__name;
-            lblRarityR.Text = resultado.rarity.ToUpper();
-            lblTextR.Text = resultado.oracle_text;
-            pBoxCard.Load(resultado.image_uris.normal);
+            
         }
 
         private void btnMaximizar_Click(object sender, EventArgs e)
@@ -59,7 +42,7 @@ namespace MTGCatalog
 
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
-            this.WindowState=FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnRestaurar_Click(object sender, EventArgs e)
@@ -80,13 +63,12 @@ namespace MTGCatalog
 
         private void btnBuscaNome_Click(object sender, EventArgs e)
         {
-            pnlNome.Visible = true;
-            pnlResultado.Visible = true;
+            AbrirFormNoPanel<FormNome>();
         }
 
         private void btnBuscaEfeito_Click(object sender, EventArgs e)
         {
-
+            AbrirFormNoPanel<FormEfeito>();
         }
 
         private void btnBuscaCorCMC_Click(object sender, EventArgs e)
@@ -104,9 +86,27 @@ namespace MTGCatalog
 
         }
 
-        private void btnBuscarNome_Click(object sender, EventArgs e)
+        private void AbrirFormNoPanel<Forms>() where Forms : Form, new()
         {
-            ResultadoNome(APISearch.GetCard(tBoxNome.Text));
+            Form form;
+            form = panel1.Controls.OfType<Forms>().FirstOrDefault();
+            if (form == null)
+            {
+                form = new Forms();
+                form.TopLevel = false;
+                form.FormBorderStyle = FormBorderStyle.None;
+                form.Dock = DockStyle.Fill;
+                panel1.Controls.Add(form);
+                panel1.Tag = form;
+                form.Show();
+                form.BringToFront();
+            }
+            else
+            {
+                if (form.WindowState == FormWindowState.Minimized)
+                    form.WindowState = FormWindowState.Normal;
+                form.BringToFront();
+            }
         }
     }
 }

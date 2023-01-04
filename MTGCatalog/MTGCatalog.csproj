@@ -78,18 +78,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormEfeito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEfeito.Designer.cs">
+      <DependentUpon>FormEfeito.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormHome.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormHome.Designer.cs">
       <DependentUpon>FormHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNome.Designer.cs">
+      <DependentUpon>FormNome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\APIService.cs" />
     <Compile Include="Services\CardModel.cs" />
+    <EmbeddedResource Include="FormEfeito.resx">
+      <DependentUpon>FormEfeito.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNome.resx">
+      <DependentUpon>FormNome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
