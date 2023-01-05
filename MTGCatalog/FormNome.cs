@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static MTGCatalog.Services.CardModel;
 
 namespace MTGCatalog
 {
@@ -18,24 +19,68 @@ namespace MTGCatalog
         {
             InitializeComponent();
             APISearch = new APIService();
-
+            listBox1.Visible = false;
+            
         }
         private void btnFnNome_Click(object sender, EventArgs e)
         {
             ResultadoNome(APISearch.GetCard(tBoxNome.Text));
+            
         }
 
         private void ResultadoNome(CardModel.Datum resultado)
         {
-            txtNomeR.Text = resultado.name;
-            txtCmcR.Text = resultado.cmc.ToString();
-            txtCorR.Text = String.Join(", ", resultado.colors);
-            txtSetR.Text = resultado.set__name;
-            txtRarityR.Text = resultado.rarity.ToUpper();
-            richTextR.Text = resultado.oracle_text;
-            pBoxCard.Load(resultado.image_uris.normal);
+            if (resultado.card_faces == null)
+            {
+                listBox1.Visible = false;
+                txtNomeR.Text = resultado.name;
+                txtCmcR.Text = resultado.mana_cost;
+                txtSetR.Text = resultado.set__name;
+                txtRarityR.Text = resultado.rarity.ToUpper();
+                richTextR.Text = resultado.oracle_text;
+                txtCorR.Text = String.Join(", ", resultado.colors);
+                pBoxCard.Load(resultado.image_uris.normal);
+            }
+            else
+            {
+                listBox1.Visible = true;
+                listBox1.DataSource = resultado.card_faces;
+                listBox1.DisplayMember = "Name";
+                var cardface = resultado.card_faces[0];
+                txtNomeR.Text = cardface.name;
+                txtCmcR.Text = cardface.mana_cost;
+                txtSetR.Text = resultado.set__name;
+                txtRarityR.Text = resultado.rarity.ToUpper();
+                richTextR.Text = cardface.oracle_text;
+                try
+                {
+                    txtCorR.Text = String.Join(", ", cardface.colors);
+                    pBoxCard.Load(cardface.image_uris.normal);
+                }
+                catch
+                {
+                    txtCorR.Text = String.Join(", ", resultado.colors);
+                    pBoxCard.Load(resultado.image_uris.normal);
+                }
+            }
         }
 
-        
+        private void listBox1_DoubleClick(object sender, EventArgs e)
+        {
+            var lista = ((CardModel.CardFace)listBox1.SelectedItem);
+            txtNomeR.Text = lista.name;
+            txtCmcR.Text = lista.mana_cost;
+            richTextR.Text = lista.oracle_text;
+            try
+            {
+                txtCorR.Text = String.Join(", ", lista.colors);
+                pBoxCard.Load(lista.image_uris.normal);
+            }
+            catch
+            {
+                txtCorR.Text = txtCmcR.Text;
+                pBoxCard.Image = pBoxCard.Image;
+            }
+        }
     }
 }
