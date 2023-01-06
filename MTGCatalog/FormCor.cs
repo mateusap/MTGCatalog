@@ -11,22 +11,28 @@ using System.Windows.Forms;
 
 namespace MTGCatalog
 {
-    public partial class FormEfeito : Form
+    public partial class FormCor : Form
     {
         private Services.APIService APISearch;
-        public FormEfeito()
+        public FormCor()
         {
             InitializeComponent();
             APISearch = new APIService();
             listBox1.Visible = false;
-
         }
-        private void btnFnEfeito_Click(object sender, EventArgs e)
+
+        private void btnFnCor_Click(object sender, EventArgs e)
         {
-            ResultadoEfeito(APISearch.GetByEffect(tBoxEfeito.Text));
-
+            string busca = cListCores.SelectedItem.ToString();
+            ResultadoCor(APISearch.GetByColor(busca));
         }
-
+        private void ResultadoCor(CardModel.Root resultado)
+        {
+            string busca = cListCores.SelectedItem.ToString();
+            var carta = APISearch.GetByEffect(busca);
+            listEfeito.DataSource = carta.data;
+            listEfeito.DisplayMember = "Name";
+        }
         private void listEfeito_DoubleClick(object sender, EventArgs e)
         {
             var lista = ((CardModel.Datum)listEfeito.SelectedItem);
@@ -64,15 +70,6 @@ namespace MTGCatalog
                 }
             }
         }
-
-
-        private void ResultadoEfeito(CardModel.Root resultado)
-        {
-            var carta = APISearch.GetByEffect(tBoxEfeito.Text);
-            listEfeito.DataSource = carta.data;
-            listEfeito.DisplayMember = "Name";
-        }
-
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {
             var lista = ((CardModel.CardFace)listBox1.SelectedItem);
@@ -90,6 +87,5 @@ namespace MTGCatalog
                 pBoxCard.Image = pBoxCard.Image;
             }
         }
-
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace MTGCatalog
 {
-    partial class FormEfeito
+    partial class FormCor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEfeito));
-            this.pnlEfeito = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCor));
+            this.pnlCor = new System.Windows.Forms.Panel();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.txtRarityR = new System.Windows.Forms.TextBox();
             this.txtSetR = new System.Windows.Forms.TextBox();
@@ -45,41 +45,43 @@
             this.lblCmc = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.listEfeito = new System.Windows.Forms.ListBox();
-            this.btnFnEfeito = new System.Windows.Forms.Button();
+            this.btnFnCor = new System.Windows.Forms.Button();
             this.lblDescEfeito = new System.Windows.Forms.Label();
-            this.tBoxEfeito = new System.Windows.Forms.TextBox();
-            this.pnlEfeito.SuspendLayout();
+            this.cListCores = new System.Windows.Forms.CheckedListBox();
+            this.txtCusto = new System.Windows.Forms.TextBox();
+            this.pnlCor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxCard)).BeginInit();
             this.SuspendLayout();
             // 
-            // pnlEfeito
+            // pnlCor
             // 
-            this.pnlEfeito.AutoSize = true;
-            this.pnlEfeito.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pnlEfeito.Controls.Add(this.listBox1);
-            this.pnlEfeito.Controls.Add(this.txtRarityR);
-            this.pnlEfeito.Controls.Add(this.txtSetR);
-            this.pnlEfeito.Controls.Add(this.txtCorR);
-            this.pnlEfeito.Controls.Add(this.txtCmcR);
-            this.pnlEfeito.Controls.Add(this.txtNomeR);
-            this.pnlEfeito.Controls.Add(this.richTextR);
-            this.pnlEfeito.Controls.Add(this.pBoxCard);
-            this.pnlEfeito.Controls.Add(this.lblText);
-            this.pnlEfeito.Controls.Add(this.lblRarity);
-            this.pnlEfeito.Controls.Add(this.lblSet);
-            this.pnlEfeito.Controls.Add(this.lblColor);
-            this.pnlEfeito.Controls.Add(this.lblCmc);
-            this.pnlEfeito.Controls.Add(this.lblNome);
-            this.pnlEfeito.Controls.Add(this.listEfeito);
-            this.pnlEfeito.Controls.Add(this.btnFnEfeito);
-            this.pnlEfeito.Controls.Add(this.lblDescEfeito);
-            this.pnlEfeito.Controls.Add(this.tBoxEfeito);
-            this.pnlEfeito.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlEfeito.Location = new System.Drawing.Point(0, 0);
-            this.pnlEfeito.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlEfeito.Name = "pnlEfeito";
-            this.pnlEfeito.Size = new System.Drawing.Size(618, 314);
-            this.pnlEfeito.TabIndex = 48;
+            this.pnlCor.AutoSize = true;
+            this.pnlCor.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pnlCor.Controls.Add(this.txtCusto);
+            this.pnlCor.Controls.Add(this.cListCores);
+            this.pnlCor.Controls.Add(this.listBox1);
+            this.pnlCor.Controls.Add(this.txtRarityR);
+            this.pnlCor.Controls.Add(this.txtSetR);
+            this.pnlCor.Controls.Add(this.txtCorR);
+            this.pnlCor.Controls.Add(this.txtCmcR);
+            this.pnlCor.Controls.Add(this.txtNomeR);
+            this.pnlCor.Controls.Add(this.richTextR);
+            this.pnlCor.Controls.Add(this.pBoxCard);
+            this.pnlCor.Controls.Add(this.lblText);
+            this.pnlCor.Controls.Add(this.lblRarity);
+            this.pnlCor.Controls.Add(this.lblSet);
+            this.pnlCor.Controls.Add(this.lblColor);
+            this.pnlCor.Controls.Add(this.lblCmc);
+            this.pnlCor.Controls.Add(this.lblNome);
+            this.pnlCor.Controls.Add(this.listEfeito);
+            this.pnlCor.Controls.Add(this.btnFnCor);
+            this.pnlCor.Controls.Add(this.lblDescEfeito);
+            this.pnlCor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCor.Location = new System.Drawing.Point(0, 0);
+            this.pnlCor.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlCor.Name = "pnlCor";
+            this.pnlCor.Size = new System.Drawing.Size(618, 314);
+            this.pnlCor.TabIndex = 49;
             // 
             // listBox1
             // 
@@ -90,7 +92,6 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(173, 34);
             this.listBox1.TabIndex = 57;
-            this.listBox1.DoubleClick += new System.EventHandler(this.listBox1_DoubleClick);
             // 
             // txtRarityR
             // 
@@ -245,18 +246,17 @@
             this.listEfeito.Name = "listEfeito";
             this.listEfeito.Size = new System.Drawing.Size(188, 82);
             this.listEfeito.TabIndex = 43;
-            this.listEfeito.DoubleClick += new System.EventHandler(this.listEfeito_DoubleClick);
             // 
-            // btnFnEfeito
+            // btnFnCor
             // 
-            this.btnFnEfeito.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnFnEfeito.Location = new System.Drawing.Point(234, 12);
-            this.btnFnEfeito.Name = "btnFnEfeito";
-            this.btnFnEfeito.Size = new System.Drawing.Size(75, 23);
-            this.btnFnEfeito.TabIndex = 42;
-            this.btnFnEfeito.Text = "Buscar";
-            this.btnFnEfeito.UseVisualStyleBackColor = true;
-            this.btnFnEfeito.Click += new System.EventHandler(this.btnFnEfeito_Click);
+            this.btnFnCor.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnFnCor.Location = new System.Drawing.Point(295, 13);
+            this.btnFnCor.Name = "btnFnCor";
+            this.btnFnCor.Size = new System.Drawing.Size(75, 23);
+            this.btnFnCor.TabIndex = 42;
+            this.btnFnCor.Text = "Buscar";
+            this.btnFnCor.UseVisualStyleBackColor = true;
+            this.btnFnCor.Click += new System.EventHandler(this.btnFnCor_Click);
             // 
             // lblDescEfeito
             // 
@@ -267,24 +267,39 @@
             this.lblDescEfeito.Text = "Digite parte do texto para procurar.\r\n(Ex: \"draw)";
             this.lblDescEfeito.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // tBoxEfeito
+            // cListCores
             // 
-            this.tBoxEfeito.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBoxEfeito.Location = new System.Drawing.Point(34, 12);
-            this.tBoxEfeito.Name = "tBoxEfeito";
-            this.tBoxEfeito.Size = new System.Drawing.Size(177, 23);
-            this.tBoxEfeito.TabIndex = 40;
+            this.cListCores.CheckOnClick = true;
+            this.cListCores.FormattingEnabled = true;
+            this.cListCores.Items.AddRange(new object[] {
+            "Branco",
+            "Azul",
+            "Preto",
+            "Vermelho",
+            "Verde",
+            "Incolor"});
+            this.cListCores.Location = new System.Drawing.Point(34, 12);
+            this.cListCores.Name = "cListCores";
+            this.cListCores.Size = new System.Drawing.Size(120, 94);
+            this.cListCores.TabIndex = 58;
             // 
-            // FormEfeito
+            // txtCusto
+            // 
+            this.txtCusto.Location = new System.Drawing.Point(175, 13);
+            this.txtCusto.Name = "txtCusto";
+            this.txtCusto.Size = new System.Drawing.Size(100, 20);
+            this.txtCusto.TabIndex = 59;
+            // 
+            // FormCor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 314);
-            this.Controls.Add(this.pnlEfeito);
-            this.Name = "FormEfeito";
-            this.Text = "FormEfeito";
-            this.pnlEfeito.ResumeLayout(false);
-            this.pnlEfeito.PerformLayout();
+            this.Controls.Add(this.pnlCor);
+            this.Name = "FormCor";
+            this.Text = "FormCor";
+            this.pnlCor.ResumeLayout(false);
+            this.pnlCor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxCard)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -292,11 +307,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel pnlEfeito;
-        private System.Windows.Forms.ListBox listEfeito;
-        private System.Windows.Forms.Button btnFnEfeito;
-        private System.Windows.Forms.Label lblDescEfeito;
-        private System.Windows.Forms.TextBox tBoxEfeito;
+
+        private System.Windows.Forms.Panel pnlCor;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox txtRarityR;
         private System.Windows.Forms.TextBox txtSetR;
@@ -311,5 +323,10 @@
         private System.Windows.Forms.Label lblColor;
         private System.Windows.Forms.Label lblCmc;
         private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.ListBox listEfeito;
+        private System.Windows.Forms.Button btnFnCor;
+        private System.Windows.Forms.Label lblDescEfeito;
+        private System.Windows.Forms.TextBox txtCusto;
+        private System.Windows.Forms.CheckedListBox cListCores;
     }
 }

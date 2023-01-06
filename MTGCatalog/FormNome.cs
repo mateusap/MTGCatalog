@@ -20,7 +20,6 @@ namespace MTGCatalog
             InitializeComponent();
             APISearch = new APIService();
             listBox1.Visible = false;
-            
         }
         private void btnFnNome_Click(object sender, EventArgs e)
         {

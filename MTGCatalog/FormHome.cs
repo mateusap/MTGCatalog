@@ -20,12 +20,12 @@ namespace MTGCatalog
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
-        
+
         public FormHome()
         {
             InitializeComponent();
             btnRestaurar.Visible = false;
-            
+
         }
 
         private void btnMaximizar_Click(object sender, EventArgs e)
@@ -64,16 +64,22 @@ namespace MTGCatalog
         private void btnBuscaNome_Click(object sender, EventArgs e)
         {
             AbrirFormNoPanel<FormNome>();
+            FecharFormNoPanel<FormEfeito>();
+            FecharFormNoPanel<FormCor>();
         }
 
         private void btnBuscaEfeito_Click(object sender, EventArgs e)
         {
             AbrirFormNoPanel<FormEfeito>();
+            FecharFormNoPanel<FormNome>();
+            FecharFormNoPanel<FormCor>();
         }
 
         private void btnBuscaCorCMC_Click(object sender, EventArgs e)
         {
-
+            AbrirFormNoPanel<FormCor>();
+            FecharFormNoPanel<FormNome>();
+            FecharFormNoPanel<FormEfeito>();
         }
 
         private void btnBuscaTipo_Click(object sender, EventArgs e)
@@ -106,6 +112,15 @@ namespace MTGCatalog
                 if (form.WindowState == FormWindowState.Minimized)
                     form.WindowState = FormWindowState.Normal;
                 form.BringToFront();
+            }
+        }
+        private void FecharFormNoPanel<Forms>() where Forms : Form, new()
+        {
+            Form form;
+            form = panel1.Controls.OfType<Forms>().FirstOrDefault();
+            if (form != null)
+            {
+                form.Dispose();
             }
         }
     }

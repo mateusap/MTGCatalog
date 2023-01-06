@@ -26,5 +26,12 @@ namespace MTGCatalog.Services
             return new JsonDeserializer().Deserialize<CardModel.Root>(response);
         }
 
+        public CardModel.Root GetByColor (string parametro)
+        {
+            var client = new RestClient($"https://api.scryfall.com/cards/search?order=rarity&q={parametro.ToLower()}");
+            var request = new RestRequest (Method.GET);
+            IRestResponse response = client.Execute(request);
+            return new JsonDeserializer().Deserialize<CardModel.Root>(response);
+        }
     }
 }
