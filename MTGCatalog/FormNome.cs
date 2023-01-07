@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI;
 using System.Windows.Forms;
 using static MTGCatalog.Services.CardModel;
 
@@ -20,11 +21,11 @@ namespace MTGCatalog
             InitializeComponent();
             APISearch = new APIService();
             listBox1.Visible = false;
+            btnFnNome.Enabled = false;
         }
         private void btnFnNome_Click(object sender, EventArgs e)
         {
             ResultadoNome(APISearch.GetCard(tBoxNome.Text));
-            
         }
 
         private void ResultadoNome(CardModel.Datum resultado)
@@ -79,6 +80,18 @@ namespace MTGCatalog
             {
                 txtCorR.Text = txtCmcR.Text;
                 pBoxCard.Image = pBoxCard.Image;
+            }
+        }
+
+        private void tBoxNome_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(tBoxNome.Text))
+            {
+                btnFnNome.Enabled = false;
+            }
+            else
+            {
+                btnFnNome.Enabled = true;
             }
         }
     }

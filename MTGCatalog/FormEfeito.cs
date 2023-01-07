@@ -19,7 +19,7 @@ namespace MTGCatalog
             InitializeComponent();
             APISearch = new APIService();
             listBox1.Visible = false;
-
+            btnFnEfeito.Enabled = false;
         }
         private void btnFnEfeito_Click(object sender, EventArgs e)
         {
@@ -91,5 +91,16 @@ namespace MTGCatalog
             }
         }
 
+        private void tBoxEfeito_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(tBoxEfeito.Text))
+            {
+                btnFnEfeito.Enabled = false;
+            }
+            else
+            {
+                btnFnEfeito.Enabled = true;
+            }
+        }
     }
 }

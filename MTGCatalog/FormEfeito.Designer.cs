@@ -274,6 +274,7 @@
             this.tBoxEfeito.Name = "tBoxEfeito";
             this.tBoxEfeito.Size = new System.Drawing.Size(177, 23);
             this.tBoxEfeito.TabIndex = 40;
+            this.tBoxEfeito.TextChanged += new System.EventHandler(this.tBoxEfeito_TextChanged);
             // 
             // FormEfeito
             // 

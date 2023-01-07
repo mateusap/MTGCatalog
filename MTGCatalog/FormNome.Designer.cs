@@ -30,9 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNome));
             this.pnlNome = new System.Windows.Forms.Panel();
-            this.btnFnNome = new System.Windows.Forms.Button();
-            this.lblDescricao = new System.Windows.Forms.Label();
-            this.tBoxNome = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.txtRarityR = new System.Windows.Forms.TextBox();
             this.txtSetR = new System.Windows.Forms.TextBox();
@@ -47,6 +44,9 @@
             this.lblColor = new System.Windows.Forms.Label();
             this.lblCmc = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
+            this.btnFnNome = new System.Windows.Forms.Button();
+            this.lblDescricao = new System.Windows.Forms.Label();
+            this.tBoxNome = new System.Windows.Forms.TextBox();
             this.pnlNome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxCard)).BeginInit();
             this.SuspendLayout();
@@ -77,34 +77,6 @@
             this.pnlNome.Name = "pnlNome";
             this.pnlNome.Size = new System.Drawing.Size(618, 314);
             this.pnlNome.TabIndex = 17;
-            // 
-            // btnFnNome
-            // 
-            this.btnFnNome.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnFnNome.Location = new System.Drawing.Point(234, 12);
-            this.btnFnNome.Name = "btnFnNome";
-            this.btnFnNome.Size = new System.Drawing.Size(75, 23);
-            this.btnFnNome.TabIndex = 45;
-            this.btnFnNome.Text = "Buscar";
-            this.btnFnNome.UseVisualStyleBackColor = true;
-            this.btnFnNome.Click += new System.EventHandler(this.btnFnNome_Click);
-            // 
-            // lblDescricao
-            // 
-            this.lblDescricao.Location = new System.Drawing.Point(34, 38);
-            this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(177, 26);
-            this.lblDescricao.TabIndex = 44;
-            this.lblDescricao.Text = "Digite o nome da carta\r\n(não precisa ser exato)";
-            this.lblDescricao.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // tBoxNome
-            // 
-            this.tBoxNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBoxNome.Location = new System.Drawing.Point(34, 12);
-            this.tBoxNome.Name = "tBoxNome";
-            this.tBoxNome.Size = new System.Drawing.Size(177, 23);
-            this.tBoxNome.TabIndex = 43;
             // 
             // listBox1
             // 
@@ -261,6 +233,35 @@
             this.lblNome.Size = new System.Drawing.Size(49, 15);
             this.lblNome.TabIndex = 46;
             this.lblNome.Text = "Nome:";
+            // 
+            // btnFnNome
+            // 
+            this.btnFnNome.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnFnNome.Location = new System.Drawing.Point(234, 12);
+            this.btnFnNome.Name = "btnFnNome";
+            this.btnFnNome.Size = new System.Drawing.Size(75, 23);
+            this.btnFnNome.TabIndex = 45;
+            this.btnFnNome.Text = "Buscar";
+            this.btnFnNome.UseVisualStyleBackColor = true;
+            this.btnFnNome.Click += new System.EventHandler(this.btnFnNome_Click);
+            // 
+            // lblDescricao
+            // 
+            this.lblDescricao.Location = new System.Drawing.Point(34, 38);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(177, 26);
+            this.lblDescricao.TabIndex = 44;
+            this.lblDescricao.Text = "Digite o nome da carta\r\n(não precisa ser exato)";
+            this.lblDescricao.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tBoxNome
+            // 
+            this.tBoxNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBoxNome.Location = new System.Drawing.Point(34, 12);
+            this.tBoxNome.Name = "tBoxNome";
+            this.tBoxNome.Size = new System.Drawing.Size(177, 23);
+            this.tBoxNome.TabIndex = 43;
+            this.tBoxNome.TextChanged += new System.EventHandler(this.tBoxNome_TextChanged);
             // 
             // FormNome
             // 
