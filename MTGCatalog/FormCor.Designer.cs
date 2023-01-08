@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCor));
             this.pnlCor = new System.Windows.Forms.Panel();
+            this.txtCusto = new System.Windows.Forms.TextBox();
+            this.cListCores = new System.Windows.Forms.CheckedListBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.txtRarityR = new System.Windows.Forms.TextBox();
             this.txtSetR = new System.Windows.Forms.TextBox();
@@ -47,8 +49,6 @@
             this.listEfeito = new System.Windows.Forms.ListBox();
             this.btnFnCor = new System.Windows.Forms.Button();
             this.lblDescEfeito = new System.Windows.Forms.Label();
-            this.cListCores = new System.Windows.Forms.CheckedListBox();
-            this.txtCusto = new System.Windows.Forms.TextBox();
             this.pnlCor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxCard)).BeginInit();
             this.SuspendLayout();
@@ -83,6 +83,29 @@
             this.pnlCor.Size = new System.Drawing.Size(618, 314);
             this.pnlCor.TabIndex = 49;
             // 
+            // txtCusto
+            // 
+            this.txtCusto.Location = new System.Drawing.Point(175, 13);
+            this.txtCusto.Name = "txtCusto";
+            this.txtCusto.Size = new System.Drawing.Size(100, 20);
+            this.txtCusto.TabIndex = 59;
+            // 
+            // cListCores
+            // 
+            this.cListCores.CheckOnClick = true;
+            this.cListCores.FormattingEnabled = true;
+            this.cListCores.Items.AddRange(new object[] {
+            "white",
+            "blue",
+            "black",
+            "red",
+            "green",
+            "colorless"});
+            this.cListCores.Location = new System.Drawing.Point(34, 12);
+            this.cListCores.Name = "cListCores";
+            this.cListCores.Size = new System.Drawing.Size(120, 64);
+            this.cListCores.TabIndex = 58;
+            // 
             // listBox1
             // 
             this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -92,6 +115,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(173, 34);
             this.listBox1.TabIndex = 57;
+            this.listBox1.DoubleClick += new System.EventHandler(this.listBox1_DoubleClick);
             // 
             // txtRarityR
             // 
@@ -246,6 +270,7 @@
             this.listEfeito.Name = "listEfeito";
             this.listEfeito.Size = new System.Drawing.Size(188, 82);
             this.listEfeito.TabIndex = 43;
+            this.listEfeito.DoubleClick += new System.EventHandler(this.listEfeito_DoubleClick);
             // 
             // btnFnCor
             // 
@@ -260,35 +285,12 @@
             // 
             // lblDescEfeito
             // 
-            this.lblDescEfeito.Location = new System.Drawing.Point(34, 38);
+            this.lblDescEfeito.Location = new System.Drawing.Point(172, 39);
             this.lblDescEfeito.Name = "lblDescEfeito";
-            this.lblDescEfeito.Size = new System.Drawing.Size(177, 32);
+            this.lblDescEfeito.Size = new System.Drawing.Size(198, 32);
             this.lblDescEfeito.TabIndex = 41;
-            this.lblDescEfeito.Text = "Digite parte do texto para procurar.\r\n(Ex: \"draw)";
+            this.lblDescEfeito.Text = "Escolha a(s) cor(es) e custo de mana;";
             this.lblDescEfeito.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // cListCores
-            // 
-            this.cListCores.CheckOnClick = true;
-            this.cListCores.FormattingEnabled = true;
-            this.cListCores.Items.AddRange(new object[] {
-            "Branco",
-            "Azul",
-            "Preto",
-            "Vermelho",
-            "Verde",
-            "Incolor"});
-            this.cListCores.Location = new System.Drawing.Point(34, 12);
-            this.cListCores.Name = "cListCores";
-            this.cListCores.Size = new System.Drawing.Size(120, 94);
-            this.cListCores.TabIndex = 58;
-            // 
-            // txtCusto
-            // 
-            this.txtCusto.Location = new System.Drawing.Point(175, 13);
-            this.txtCusto.Name = "txtCusto";
-            this.txtCusto.Size = new System.Drawing.Size(100, 20);
-            this.txtCusto.TabIndex = 59;
             // 
             // FormCor
             // 

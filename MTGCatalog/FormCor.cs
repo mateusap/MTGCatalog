@@ -13,6 +13,7 @@ namespace MTGCatalog
 {
     public partial class FormCor : Form
     {
+        
         private Services.APIService APISearch;
         public FormCor()
         {
@@ -23,13 +24,17 @@ namespace MTGCatalog
 
         private void btnFnCor_Click(object sender, EventArgs e)
         {
-            string busca = cListCores.SelectedItem.ToString();
+            //<= at most these colors
+            //>= including these colors
+            //= exactly these colors
+            string busca = ($"c={cListCores.SelectedItem.ToString()}+cmc:{txtCusto.Text}"); 
             ResultadoCor(APISearch.GetByColor(busca));
         }
         private void ResultadoCor(CardModel.Root resultado)
         {
-            string busca = cListCores.SelectedItem.ToString();
-            var carta = APISearch.GetByEffect(busca);
+
+            string busca = ($"c:{cListCores.SelectedItem.ToString()}+cmc:{txtCusto.Text}");
+            var carta = APISearch.GetByColor(busca);
             listEfeito.DataSource = carta.data;
             listEfeito.DisplayMember = "Name";
         }
