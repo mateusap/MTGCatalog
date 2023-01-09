@@ -8,32 +8,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static MTGCatalog.Services.CompareAndTypes;
 
 namespace MTGCatalog
 {
     public partial class FormCor : Form
     {
-        
-        private Services.APIService APISearch;
+        private CompareAndTypes CompareAndTypes;
+        private APIService APISearch;
+
         public FormCor()
         {
             InitializeComponent();
             APISearch = new APIService();
+            CompareAndTypes = new CompareAndTypes();
             listBox1.Visible = false;
+            ((ListBox)cListCores).DataSource = CompareAndTypes.ShowColors();
+            ((ListBox)cListCores).DisplayMember = "corDisplay";
+            ((ListBox)cListCores).ValueMember = "corUrl";
+
+            cBoxCorIndic.DataSource = CompareAndTypes.ShowColorIndic();
+            cBoxCorIndic.DisplayMember = "colorIndicDisplay";
+            cBoxCorIndic.ValueMember = "colorIndicUrl";
+
+            cBoxCmc.DataSource = CompareAndTypes.ShowCompare();
+            cBoxCmc.DisplayMember = "compareDisplay";
+            cBoxCmc.ValueMember = "compareUrl";
         }
 
         private void btnFnCor_Click(object sender, EventArgs e)
         {
-            //<= at most these colors
-            //>= including these colors
-            //= exactly these colors
-            string busca = ($"c={cListCores.SelectedItem.ToString()}+cmc:{txtCusto.Text}"); 
+            string busca = ($"c{cBoxCorIndic.SelectedValue}{cListCores.SelectedValue}+cmc{cBoxCmc.SelectedValue}{txtCusto.Text}");
             ResultadoCor(APISearch.GetByColor(busca));
+            
         }
         private void ResultadoCor(CardModel.Root resultado)
         {
-
-            string busca = ($"c:{cListCores.SelectedItem.ToString()}+cmc:{txtCusto.Text}");
+            string busca = ($"c{cBoxCorIndic.SelectedValue}{cListCores.SelectedValue}+cmc{cBoxCmc.SelectedValue}{txtCusto.Text}");
             var carta = APISearch.GetByColor(busca);
             listEfeito.DataSource = carta.data;
             listEfeito.DisplayMember = "Name";

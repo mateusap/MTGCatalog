@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEfeito));
             this.pnlEfeito = new System.Windows.Forms.Panel();
+            this.qtResultado = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.txtRarityR = new System.Windows.Forms.TextBox();
             this.txtSetR = new System.Windows.Forms.TextBox();
@@ -56,6 +57,7 @@
             // 
             this.pnlEfeito.AutoSize = true;
             this.pnlEfeito.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pnlEfeito.Controls.Add(this.qtResultado);
             this.pnlEfeito.Controls.Add(this.listBox1);
             this.pnlEfeito.Controls.Add(this.txtRarityR);
             this.pnlEfeito.Controls.Add(this.txtSetR);
@@ -80,6 +82,14 @@
             this.pnlEfeito.Name = "pnlEfeito";
             this.pnlEfeito.Size = new System.Drawing.Size(618, 314);
             this.pnlEfeito.TabIndex = 48;
+            // 
+            // qtResultado
+            // 
+            this.qtResultado.AutoSize = true;
+            this.qtResultado.Location = new System.Drawing.Point(485, 74);
+            this.qtResultado.Name = "qtResultado";
+            this.qtResultado.Size = new System.Drawing.Size(0, 13);
+            this.qtResultado.TabIndex = 58;
             // 
             // listBox1
             // 
@@ -243,7 +253,7 @@
             this.listEfeito.FormattingEnabled = true;
             this.listEfeito.Location = new System.Drawing.Point(418, 3);
             this.listEfeito.Name = "listEfeito";
-            this.listEfeito.Size = new System.Drawing.Size(188, 82);
+            this.listEfeito.Size = new System.Drawing.Size(188, 69);
             this.listEfeito.TabIndex = 43;
             this.listEfeito.DoubleClick += new System.EventHandler(this.listEfeito_DoubleClick);
             // 
@@ -312,5 +322,6 @@
         private System.Windows.Forms.Label lblColor;
         private System.Windows.Forms.Label lblCmc;
         private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.Label qtResultado;
     }
 }

@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCor));
             this.pnlCor = new System.Windows.Forms.Panel();
+            this.cBoxCmc = new System.Windows.Forms.ComboBox();
+            this.cBoxCorIndic = new System.Windows.Forms.ComboBox();
+            this.qtResultado = new System.Windows.Forms.Label();
             this.txtCusto = new System.Windows.Forms.TextBox();
             this.cListCores = new System.Windows.Forms.CheckedListBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -57,6 +60,9 @@
             // 
             this.pnlCor.AutoSize = true;
             this.pnlCor.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pnlCor.Controls.Add(this.cBoxCmc);
+            this.pnlCor.Controls.Add(this.cBoxCorIndic);
+            this.pnlCor.Controls.Add(this.qtResultado);
             this.pnlCor.Controls.Add(this.txtCusto);
             this.pnlCor.Controls.Add(this.cListCores);
             this.pnlCor.Controls.Add(this.listBox1);
@@ -83,6 +89,32 @@
             this.pnlCor.Size = new System.Drawing.Size(618, 314);
             this.pnlCor.TabIndex = 49;
             // 
+            // cBoxCmc
+            // 
+            this.cBoxCmc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBoxCmc.FormattingEnabled = true;
+            this.cBoxCmc.Location = new System.Drawing.Point(306, 46);
+            this.cBoxCmc.Name = "cBoxCmc";
+            this.cBoxCmc.Size = new System.Drawing.Size(121, 21);
+            this.cBoxCmc.TabIndex = 62;
+            // 
+            // cBoxCorIndic
+            // 
+            this.cBoxCorIndic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBoxCorIndic.FormattingEnabled = true;
+            this.cBoxCorIndic.Location = new System.Drawing.Point(141, 48);
+            this.cBoxCorIndic.Name = "cBoxCorIndic";
+            this.cBoxCorIndic.Size = new System.Drawing.Size(121, 21);
+            this.cBoxCorIndic.TabIndex = 61;
+            // 
+            // qtResultado
+            // 
+            this.qtResultado.AutoSize = true;
+            this.qtResultado.Location = new System.Drawing.Point(485, 74);
+            this.qtResultado.Name = "qtResultado";
+            this.qtResultado.Size = new System.Drawing.Size(0, 13);
+            this.qtResultado.TabIndex = 60;
+            // 
             // txtCusto
             // 
             this.txtCusto.Location = new System.Drawing.Point(175, 13);
@@ -94,14 +126,7 @@
             // 
             this.cListCores.CheckOnClick = true;
             this.cListCores.FormattingEnabled = true;
-            this.cListCores.Items.AddRange(new object[] {
-            "white",
-            "blue",
-            "black",
-            "red",
-            "green",
-            "colorless"});
-            this.cListCores.Location = new System.Drawing.Point(34, 12);
+            this.cListCores.Location = new System.Drawing.Point(34, 7);
             this.cListCores.Name = "cListCores";
             this.cListCores.Size = new System.Drawing.Size(120, 64);
             this.cListCores.TabIndex = 58;
@@ -268,7 +293,7 @@
             this.listEfeito.FormattingEnabled = true;
             this.listEfeito.Location = new System.Drawing.Point(418, 3);
             this.listEfeito.Name = "listEfeito";
-            this.listEfeito.Size = new System.Drawing.Size(188, 82);
+            this.listEfeito.Size = new System.Drawing.Size(188, 69);
             this.listEfeito.TabIndex = 43;
             this.listEfeito.DoubleClick += new System.EventHandler(this.listEfeito_DoubleClick);
             // 
@@ -330,5 +355,8 @@
         private System.Windows.Forms.Label lblDescEfeito;
         private System.Windows.Forms.TextBox txtCusto;
         private System.Windows.Forms.CheckedListBox cListCores;
+        private System.Windows.Forms.Label qtResultado;
+        private System.Windows.Forms.ComboBox cBoxCmc;
+        private System.Windows.Forms.ComboBox cBoxCorIndic;
     }
 }

@@ -24,7 +24,6 @@ namespace MTGCatalog
         private void btnFnEfeito_Click(object sender, EventArgs e)
         {
             ResultadoEfeito(APISearch.GetByEffect(tBoxEfeito.Text));
-
         }
 
         private void listEfeito_DoubleClick(object sender, EventArgs e)
@@ -65,12 +64,12 @@ namespace MTGCatalog
             }
         }
 
-
         private void ResultadoEfeito(CardModel.Root resultado)
         {
             var carta = APISearch.GetByEffect(tBoxEfeito.Text);
             listEfeito.DataSource = carta.data;
             listEfeito.DisplayMember = "Name";
+            qtResultado.Text = $"{listEfeito.Items.Count.ToString()} resultados.";
         }
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
