@@ -49,6 +49,7 @@
             this.btnFnEfeito = new System.Windows.Forms.Button();
             this.lblDescEfeito = new System.Windows.Forms.Label();
             this.tBoxEfeito = new System.Windows.Forms.TextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pnlEfeito.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxCard)).BeginInit();
             this.SuspendLayout();
@@ -171,7 +172,7 @@
             this.richTextR.Name = "richTextR";
             this.richTextR.ReadOnly = true;
             this.richTextR.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextR.Size = new System.Drawing.Size(260, 97);
+            this.richTextR.Size = new System.Drawing.Size(292, 97);
             this.richTextR.TabIndex = 51;
             this.richTextR.Text = "(Resultado)";
             // 
@@ -179,13 +180,13 @@
             // 
             this.pBoxCard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pBoxCard.BackgroundImage")));
             this.pBoxCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pBoxCard.Location = new System.Drawing.Point(448, 90);
+            this.pBoxCard.InitialImage = null;
+            this.pBoxCard.Location = new System.Drawing.Point(460, 98);
             this.pBoxCard.Name = "pBoxCard";
-            this.pBoxCard.Size = new System.Drawing.Size(158, 220);
+            this.pBoxCard.Size = new System.Drawing.Size(146, 204);
             this.pBoxCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pBoxCard.TabIndex = 50;
             this.pBoxCard.TabStop = false;
-            this.pBoxCard.WaitOnLoad = true;
             // 
             // lblText
             // 
@@ -286,6 +287,11 @@
             this.tBoxEfeito.TabIndex = 40;
             this.tBoxEfeito.TextChanged += new System.EventHandler(this.tBoxEfeito_TextChanged);
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
             // FormEfeito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,5 +329,6 @@
         private System.Windows.Forms.Label lblCmc;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label qtResultado;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

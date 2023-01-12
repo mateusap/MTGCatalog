@@ -53,9 +53,9 @@ namespace MTGCatalog.Services
         {
             new Compare ("=","Igual a"),
             new Compare ("!=","Diferente de"),
-            new Compare (">=","Maior ou igual a"),
+            new Compare (">=","Maior/igual a"),
             new Compare (">", "Maior que"),
-            new Compare ("<=","Menor ou igual a"),
+            new Compare ("<=","Menor/igual a"),
             new Compare ("<", "Menor que")
         };
             return compare;
@@ -77,8 +77,8 @@ namespace MTGCatalog.Services
         {
             List<ColorIndic> indic = new List<ColorIndic>
         {
-            new ColorIndic ("=","Exatamente essas cores"),
-            new ColorIndic (":","Incluindo essas cores"),
+            new ColorIndic ("=","Só essas cores"),
+            new ColorIndic (":","Com essas cores"),
             new ColorIndic ("<=","Em sua maioria")
         };
             return indic;

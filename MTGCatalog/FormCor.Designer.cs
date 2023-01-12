@@ -51,7 +51,8 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.listEfeito = new System.Windows.Forms.ListBox();
             this.btnFnCor = new System.Windows.Forms.Button();
-            this.lblDescEfeito = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlCor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxCard)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +61,7 @@
             // 
             this.pnlCor.AutoSize = true;
             this.pnlCor.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pnlCor.Controls.Add(this.label1);
             this.pnlCor.Controls.Add(this.cBoxCmc);
             this.pnlCor.Controls.Add(this.cBoxCorIndic);
             this.pnlCor.Controls.Add(this.qtResultado);
@@ -81,7 +83,6 @@
             this.pnlCor.Controls.Add(this.lblNome);
             this.pnlCor.Controls.Add(this.listEfeito);
             this.pnlCor.Controls.Add(this.btnFnCor);
-            this.pnlCor.Controls.Add(this.lblDescEfeito);
             this.pnlCor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCor.Location = new System.Drawing.Point(0, 0);
             this.pnlCor.Margin = new System.Windows.Forms.Padding(0);
@@ -93,7 +94,7 @@
             // 
             this.cBoxCmc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxCmc.FormattingEnabled = true;
-            this.cBoxCmc.Location = new System.Drawing.Point(306, 46);
+            this.cBoxCmc.Location = new System.Drawing.Point(190, 46);
             this.cBoxCmc.Name = "cBoxCmc";
             this.cBoxCmc.Size = new System.Drawing.Size(121, 21);
             this.cBoxCmc.TabIndex = 62;
@@ -102,7 +103,7 @@
             // 
             this.cBoxCorIndic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxCorIndic.FormattingEnabled = true;
-            this.cBoxCorIndic.Location = new System.Drawing.Point(141, 48);
+            this.cBoxCorIndic.Location = new System.Drawing.Point(141, 13);
             this.cBoxCorIndic.Name = "cBoxCorIndic";
             this.cBoxCorIndic.Size = new System.Drawing.Size(121, 21);
             this.cBoxCorIndic.TabIndex = 61;
@@ -117,16 +118,17 @@
             // 
             // txtCusto
             // 
-            this.txtCusto.Location = new System.Drawing.Point(175, 13);
+            this.txtCusto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCusto.Location = new System.Drawing.Point(320, 46);
             this.txtCusto.Name = "txtCusto";
-            this.txtCusto.Size = new System.Drawing.Size(100, 20);
+            this.txtCusto.Size = new System.Drawing.Size(50, 21);
             this.txtCusto.TabIndex = 59;
             // 
             // cListCores
             // 
             this.cListCores.CheckOnClick = true;
             this.cListCores.FormattingEnabled = true;
-            this.cListCores.Location = new System.Drawing.Point(34, 7);
+            this.cListCores.Location = new System.Drawing.Point(12, 8);
             this.cListCores.Name = "cListCores";
             this.cListCores.Size = new System.Drawing.Size(120, 64);
             this.cListCores.TabIndex = 58;
@@ -219,13 +221,13 @@
             // 
             this.pBoxCard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pBoxCard.BackgroundImage")));
             this.pBoxCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pBoxCard.Location = new System.Drawing.Point(448, 90);
+            this.pBoxCard.InitialImage = null;
+            this.pBoxCard.Location = new System.Drawing.Point(460, 98);
             this.pBoxCard.Name = "pBoxCard";
-            this.pBoxCard.Size = new System.Drawing.Size(158, 220);
+            this.pBoxCard.Size = new System.Drawing.Size(146, 204);
             this.pBoxCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pBoxCard.TabIndex = 50;
             this.pBoxCard.TabStop = false;
-            this.pBoxCard.WaitOnLoad = true;
             // 
             // lblText
             // 
@@ -308,14 +310,21 @@
             this.btnFnCor.UseVisualStyleBackColor = true;
             this.btnFnCor.Click += new System.EventHandler(this.btnFnCor_Click);
             // 
-            // lblDescEfeito
+            // backgroundWorker1
             // 
-            this.lblDescEfeito.Location = new System.Drawing.Point(172, 39);
-            this.lblDescEfeito.Name = "lblDescEfeito";
-            this.lblDescEfeito.Size = new System.Drawing.Size(198, 32);
-            this.lblDescEfeito.TabIndex = 41;
-            this.lblDescEfeito.Text = "Escolha a(s) cor(es) e custo de mana;";
-            this.lblDescEfeito.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(135, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 26);
+            this.label1.TabIndex = 63;
+            this.label1.Text = "Custo de\r\nmana:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormCor
             // 
@@ -352,11 +361,12 @@
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.ListBox listEfeito;
         private System.Windows.Forms.Button btnFnCor;
-        private System.Windows.Forms.Label lblDescEfeito;
         private System.Windows.Forms.TextBox txtCusto;
         private System.Windows.Forms.CheckedListBox cListCores;
         private System.Windows.Forms.Label qtResultado;
         private System.Windows.Forms.ComboBox cBoxCmc;
         private System.Windows.Forms.ComboBox cBoxCorIndic;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -14,7 +14,7 @@ namespace MTGCatalog.Services
         {
             var client = new RestClient($"https://api.scryfall.com/cards/named?fuzzy={nome.ToLower()}");
             var request = new RestRequest(Method.GET);
-            IRestResponse response = client.Execute(request);
+            IRestResponse response =  client.Execute(request);
             return new JsonDeserializer().Deserialize<CardModel.Datum>(response);
         }
 

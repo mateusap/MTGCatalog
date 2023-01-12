@@ -1,4 +1,6 @@
 ﻿using MTGCatalog.Services;
+using RestSharp.Serialization.Json;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,27 +10,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
+using static MTGCatalog.Services.CardModel;
 
 namespace MTGCatalog
 {
     public partial class FormEfeito : Form
     {
-        private Services.APIService APISearch;
+        private APIService APISearch;
         public FormEfeito()
         {
             InitializeComponent();
+            DoubleBuffered = true;
             APISearch = new APIService();
             listBox1.Visible = false;
             btnFnEfeito.Enabled = false;
+            backgroundWorker1 = new BackgroundWorker();
+            backgroundWorker1.WorkerReportsProgress = false;
+            backgroundWorker1.WorkerSupportsCancellation = false;
+            backgroundWorker1.DoWork += backgroundWorker1_DoWork;
+            backgroundWorker1.RunWorkerCompleted += backgroundWorker1_RunWorkerCompleted;
         }
         private void btnFnEfeito_Click(object sender, EventArgs e)
         {
-            ResultadoEfeito(APISearch.GetByEffect(tBoxEfeito.Text));
+           backgroundWorker1.RunWorkerAsync();
         }
 
         private void listEfeito_DoubleClick(object sender, EventArgs e)
         {
-            var lista = ((CardModel.Datum)listEfeito.SelectedItem);
+            var lista = ((Datum)listEfeito.SelectedItem);
             if (lista.card_faces == null)
             {
                 listBox1.Visible = false;
@@ -38,7 +48,7 @@ namespace MTGCatalog
                 txtSetR.Text = lista.set__name;
                 txtRarityR.Text = lista.rarity.ToUpper();
                 richTextR.Text = lista.oracle_text;
-                pBoxCard.Load(lista.image_uris.normal);
+                pBoxCard.LoadAsync(lista.image_uris.small);
             }
             else
             {
@@ -54,34 +64,28 @@ namespace MTGCatalog
                 try
                 {
                     txtCorR.Text = String.Join(", ", cardface.colors);
-                    pBoxCard.Load(cardface.image_uris.normal);
+                    pBoxCard.LoadAsync(cardface.image_uris.small);
                 }
                 catch
                 {
                     txtCorR.Text = String.Join(", ", lista.colors);
-                    pBoxCard.Load(lista.image_uris.normal);
+                    pBoxCard.LoadAsync(lista.image_uris.small);
                 }
             }
         }
 
-        private void ResultadoEfeito(CardModel.Root resultado)
-        {
-            var carta = APISearch.GetByEffect(tBoxEfeito.Text);
-            listEfeito.DataSource = carta.data;
-            listEfeito.DisplayMember = "Name";
-            qtResultado.Text = $"{listEfeito.Items.Count.ToString()} resultados.";
-        }
+        
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {
-            var lista = ((CardModel.CardFace)listBox1.SelectedItem);
+            var lista = ((CardFace)listBox1.SelectedItem);
             txtNomeR.Text = lista.name;
             txtCmcR.Text = lista.mana_cost;
             richTextR.Text = lista.oracle_text;
             try
             {
                 txtCorR.Text = String.Join(", ", lista.colors);
-                pBoxCard.Load(lista.image_uris.normal);
+                pBoxCard.LoadAsync(lista.image_uris.small);
             }
             catch
             {
@@ -100,6 +104,20 @@ namespace MTGCatalog
             {
                 btnFnEfeito.Enabled = true;
             }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            var carta = APISearch.GetByEffect(tBoxEfeito.Text);
+            e.Result = carta;
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            Root resultado = (Root)e.Result;
+            listEfeito.DataSource = resultado.data;
+            listEfeito.DisplayMember = "Name";
+            qtResultado.Text = $"{listEfeito.Items.Count.ToString()} resultados.";
         }
     }
 }
