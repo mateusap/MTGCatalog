@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCor));
             this.pnlCor = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.cBoxCmc = new System.Windows.Forms.ComboBox();
             this.cBoxCorIndic = new System.Windows.Forms.ComboBox();
             this.qtResultado = new System.Windows.Forms.Label();
@@ -51,8 +52,6 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.listEfeito = new System.Windows.Forms.ListBox();
             this.btnFnCor = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlCor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxCard)).BeginInit();
             this.SuspendLayout();
@@ -90,6 +89,17 @@
             this.pnlCor.Size = new System.Drawing.Size(618, 314);
             this.pnlCor.TabIndex = 49;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(135, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 26);
+            this.label1.TabIndex = 63;
+            this.label1.Text = "Custo de\r\nmana:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // cBoxCmc
             // 
             this.cBoxCmc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -123,6 +133,7 @@
             this.txtCusto.Name = "txtCusto";
             this.txtCusto.Size = new System.Drawing.Size(50, 21);
             this.txtCusto.TabIndex = 59;
+            this.txtCusto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCusto_KeyDown);
             // 
             // cListCores
             // 
@@ -132,6 +143,7 @@
             this.cListCores.Name = "cListCores";
             this.cListCores.Size = new System.Drawing.Size(120, 64);
             this.cListCores.TabIndex = 58;
+            this.cListCores.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.cListCores_ItemCheck);
             // 
             // listBox1
             // 
@@ -310,22 +322,6 @@
             this.btnFnCor.UseVisualStyleBackColor = true;
             this.btnFnCor.Click += new System.EventHandler(this.btnFnCor_Click);
             // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(135, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 26);
-            this.label1.TabIndex = 63;
-            this.label1.Text = "Custo de\r\nmana:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FormCor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,7 +362,6 @@
         private System.Windows.Forms.Label qtResultado;
         private System.Windows.Forms.ComboBox cBoxCmc;
         private System.Windows.Forms.ComboBox cBoxCorIndic;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label1;
     }
 }

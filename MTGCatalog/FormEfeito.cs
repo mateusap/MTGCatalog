@@ -25,15 +25,11 @@ namespace MTGCatalog
             APISearch = new APIService();
             listBox1.Visible = false;
             btnFnEfeito.Enabled = false;
-            backgroundWorker1 = new BackgroundWorker();
-            backgroundWorker1.WorkerReportsProgress = false;
-            backgroundWorker1.WorkerSupportsCancellation = false;
-            backgroundWorker1.DoWork += backgroundWorker1_DoWork;
-            backgroundWorker1.RunWorkerCompleted += backgroundWorker1_RunWorkerCompleted;
+            
         }
         private void btnFnEfeito_Click(object sender, EventArgs e)
         {
-           backgroundWorker1.RunWorkerAsync();
+            ResultadoEfeitoAsync();
         }
 
         private void listEfeito_DoubleClick(object sender, EventArgs e)
@@ -105,19 +101,21 @@ namespace MTGCatalog
                 btnFnEfeito.Enabled = true;
             }
         }
-
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        private async void ResultadoEfeitoAsync()
         {
-            var carta = APISearch.GetByEffect(tBoxEfeito.Text);
-            e.Result = carta;
-        }
+            var resultado = await APISearch.GetByEffectAsync(tBoxEfeito.Text);
 
-        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            Root resultado = (Root)e.Result;
             listEfeito.DataSource = resultado.data;
             listEfeito.DisplayMember = "Name";
             qtResultado.Text = $"{listEfeito.Items.Count.ToString()} resultados.";
+        }
+
+        private void tBoxEfeito_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnFnEfeito_Click(this, new EventArgs());
+            }
         }
     }
 }

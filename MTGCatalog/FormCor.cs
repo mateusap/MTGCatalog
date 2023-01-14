@@ -27,6 +27,7 @@ namespace MTGCatalog
             APISearch = new APIService();
             CompareAndTypes = new CompareAndTypes();
             listBox1.Visible = false;
+            btnFnCor.Enabled = false;
             ((ListBox)cListCores).DataSource = CompareAndTypes.ShowColors();
             ((ListBox)cListCores).DisplayMember = "corDisplay";
             ((ListBox)cListCores).ValueMember = "corUrl";
@@ -38,18 +39,14 @@ namespace MTGCatalog
             cBoxCmc.DataSource = CompareAndTypes.ShowCompare();
             cBoxCmc.DisplayMember = "compareDisplay";
             cBoxCmc.ValueMember = "compareUrl";
-            backgroundWorker1 = new BackgroundWorker();
-            backgroundWorker1.WorkerReportsProgress = false;
-            backgroundWorker1.WorkerSupportsCancellation = false;
-            backgroundWorker1.DoWork += backgroundWorker1_DoWork;
-            backgroundWorker1.RunWorkerCompleted += backgroundWorker1_RunWorkerCompleted;
+
         }
 
         private void btnFnCor_Click(object sender, EventArgs e)
         {
-            backgroundWorker1.RunWorkerAsync();
+            ResultadoCorAsync();
         }
-        
+
         private void listEfeito_DoubleClick(object sender, EventArgs e)
         {
             var lista = ((Datum)listEfeito.SelectedItem);
@@ -105,20 +102,34 @@ namespace MTGCatalog
             }
         }
 
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        private async void ResultadoCorAsync()
         {
             var parametro = ($"c{cBoxCorIndic.SelectedValue}{cListCores.SelectedValue}+cmc{cBoxCmc.SelectedValue}{txtCusto.Text}");
-            var carta = APISearch.GetByColor(parametro);
-            e.Result = carta;
-            return;
-        }
+            var resultado = await APISearch.GetByColorAsync(parametro);
 
-        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            Root resultado = (Root)e.Result;
             listEfeito.DataSource = resultado.data;
             listEfeito.DisplayMember = "Name";
             qtResultado.Text = $"{listEfeito.Items.Count.ToString()} resultados.";
+        }
+
+        private void txtCusto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnFnCor_Click(this, new EventArgs());
+            }
+        }
+
+        private void cListCores_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (cListCores.CheckedItems.Count == 0)
+            {
+                if (e.NewValue == CheckState.Unchecked)
+                {
+                    btnFnCor.Enabled = false;
+                }
+                btnFnCor.Enabled = true;
+            }
         }
     }
 }

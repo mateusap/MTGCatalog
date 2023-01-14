@@ -25,16 +25,11 @@ namespace MTGCatalog
             APISearch = new APIService();
             listBox1.Visible = false;
             btnFnNome.Enabled = false;
-            backgroundWorker1 = new BackgroundWorker();
-            backgroundWorker1.WorkerReportsProgress = false;
-            backgroundWorker1.WorkerSupportsCancellation = false;
-            backgroundWorker1.DoWork += backgroundWorker1_DoWork;
-            backgroundWorker1.RunWorkerCompleted += backgroundWorker1_RunWorkerCompleted;
 
         }
         private void btnFnNome_Click(object sender, EventArgs e)
         {
-            backgroundWorker1.RunWorkerAsync();
+            ResultadoNomeAsync();
         }
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
@@ -66,17 +61,10 @@ namespace MTGCatalog
                 btnFnNome.Enabled = true;
             }
         }
-
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        private async void ResultadoNomeAsync()
         {
-            var carta = APISearch.GetCard(tBoxNome.Text);
-            e.Result = carta;
-            return;
-        }
+            var resultado = await APISearch.GetCardAsync(tBoxNome.Text);
 
-        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            Datum resultado = (Datum)e.Result;
             if (resultado.card_faces == null)
             {
                 listBox1.Visible = false;
@@ -110,6 +98,14 @@ namespace MTGCatalog
                     txtCorR.Text = String.Join(", ", resultado.colors);
                     pBoxCard.LoadAsync(resultado.image_uris.small);
                 }
+            }
+        }
+
+        private void tBoxNome_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnFnNome_Click(this, new EventArgs());
             }
         }
     }

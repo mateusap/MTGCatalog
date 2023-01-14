@@ -47,7 +47,6 @@
             this.btnFnNome = new System.Windows.Forms.Button();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.tBoxNome = new System.Windows.Forms.TextBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pnlNome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxCard)).BeginInit();
             this.SuspendLayout();
@@ -263,11 +262,7 @@
             this.tBoxNome.Size = new System.Drawing.Size(177, 23);
             this.tBoxNome.TabIndex = 43;
             this.tBoxNome.TextChanged += new System.EventHandler(this.tBoxNome_TextChanged);
-            // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            this.tBoxNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBoxNome_KeyDown);
             // 
             // FormNome
             // 
@@ -304,6 +299,5 @@
         private System.Windows.Forms.Label lblColor;
         private System.Windows.Forms.Label lblCmc;
         private System.Windows.Forms.Label lblNome;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

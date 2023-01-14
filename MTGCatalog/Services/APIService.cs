@@ -10,27 +10,27 @@ namespace MTGCatalog.Services
 {
     internal class APIService
     {
-        public CardModel.Datum GetCard (string nome)
+        public async Task<CardModel.Datum> GetCardAsync (string nome)
         {
             var client = new RestClient($"https://api.scryfall.com/cards/named?fuzzy={nome.ToLower()}");
             var request = new RestRequest(Method.GET);
-            IRestResponse response =  client.Execute(request);
+            IRestResponse response = await client.ExecuteAsync(request);
             return new JsonDeserializer().Deserialize<CardModel.Datum>(response);
         }
 
-        public CardModel.Root GetByEffect (string text)
+        public async Task<CardModel.Root> GetByEffectAsync (string text)
         {
             var client = new RestClient($"https://api.scryfall.com/cards/search?order=rarity&q=o:{text.ToLower()}");
             var request = new RestRequest(Method.GET);
-            IRestResponse response = client.Execute(request);
+            IRestResponse response = await client.ExecuteAsync(request);
             return new JsonDeserializer().Deserialize<CardModel.Root>(response);
         }
 
-        public CardModel.Root GetByColor (string parametro)
+        public async Task<CardModel.Root> GetByColorAsync (string parametro)
         {
             var client = new RestClient($"https://api.scryfall.com/cards/search?order=rarity&q={parametro.ToLower()}");
             var request = new RestRequest (Method.GET);
-            IRestResponse response = client.Execute(request);
+            IRestResponse response = await client.ExecuteAsync(request);
             return new JsonDeserializer().Deserialize<CardModel.Root>(response);
         }
     }

@@ -49,7 +49,6 @@
             this.btnFnEfeito = new System.Windows.Forms.Button();
             this.lblDescEfeito = new System.Windows.Forms.Label();
             this.tBoxEfeito = new System.Windows.Forms.TextBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pnlEfeito.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxCard)).BeginInit();
             this.SuspendLayout();
@@ -286,11 +285,7 @@
             this.tBoxEfeito.Size = new System.Drawing.Size(177, 23);
             this.tBoxEfeito.TabIndex = 40;
             this.tBoxEfeito.TextChanged += new System.EventHandler(this.tBoxEfeito_TextChanged);
-            // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            this.tBoxEfeito.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBoxEfeito_KeyDown);
             // 
             // FormEfeito
             // 
@@ -329,6 +324,5 @@
         private System.Windows.Forms.Label lblCmc;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label qtResultado;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
