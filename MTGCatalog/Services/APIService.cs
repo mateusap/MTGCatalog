@@ -33,5 +33,13 @@ namespace MTGCatalog.Services
             IRestResponse response = await client.ExecuteAsync(request);
             return new JsonDeserializer().Deserialize<CardModel.Root>(response);
         }
+
+        public async Task<CardModel.Root> GetByTypeAsync (string tipo)
+        {
+            var client = new RestClient($"https://api.scryfall.com/cards/search?order=rarity&q=t:{tipo.ToLower()}");
+            var request = new RestRequest(Method.GET);
+            IRestResponse response = await client.ExecuteAsync(request);
+            return new JsonDeserializer().Deserialize<CardModel.Root>(response);
+        }
     }
 }

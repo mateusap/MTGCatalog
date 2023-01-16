@@ -66,6 +66,7 @@ namespace MTGCatalog
             AbrirFormNoPanel<FormNome>();
             FecharFormNoPanel<FormEfeito>();
             FecharFormNoPanel<FormCor>();
+            FecharFormNoPanel<FormTipo>();
         }
 
         private void btnBuscaEfeito_Click(object sender, EventArgs e)
@@ -73,6 +74,7 @@ namespace MTGCatalog
             AbrirFormNoPanel<FormEfeito>();
             FecharFormNoPanel<FormNome>();
             FecharFormNoPanel<FormCor>();
+            FecharFormNoPanel<FormTipo>();
         }
 
         private void btnBuscaCorCMC_Click(object sender, EventArgs e)
@@ -80,11 +82,15 @@ namespace MTGCatalog
             AbrirFormNoPanel<FormCor>();
             FecharFormNoPanel<FormNome>();
             FecharFormNoPanel<FormEfeito>();
+            FecharFormNoPanel<FormTipo>();
         }
 
         private void btnBuscaTipo_Click(object sender, EventArgs e)
         {
-
+            AbrirFormNoPanel<FormTipo>();
+            FecharFormNoPanel<FormCor>();
+            FecharFormNoPanel<FormNome>();
+            FecharFormNoPanel<FormEfeito>();
         }
 
         private void btnStatus_Click(object sender, EventArgs e)
