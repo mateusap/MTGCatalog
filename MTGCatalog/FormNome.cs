@@ -40,11 +40,13 @@ namespace MTGCatalog
             richTextR.Text = lista.oracle_text;
             try
             {
+                txtTipo.Text = lista.type_line;
                 txtCorR.Text = String.Join(", ", lista.colors);
                 pBoxCard.LoadAsync(lista.image_uris.small);
             }
             catch
             {
+                txtTipo.Text = txtTipo.Text;
                 txtCorR.Text = txtCmcR.Text;
                 pBoxCard.Image = pBoxCard.Image;
             }
@@ -70,6 +72,7 @@ namespace MTGCatalog
                 listBox1.Visible = false;
                 txtNomeR.Text = resultado.name;
                 txtCmcR.Text = resultado.mana_cost;
+                txtTipo.Text = resultado.type_line;
                 txtSetR.Text = resultado.set__name;
                 txtRarityR.Text = resultado.rarity.ToUpper();
                 richTextR.Text = resultado.oracle_text;
@@ -85,6 +88,7 @@ namespace MTGCatalog
                 var cardface = resultado.card_faces[0];
                 txtNomeR.Text = cardface.name;
                 txtCmcR.Text = cardface.mana_cost;
+                txtTipo.Text = cardface.type_line;
                 txtSetR.Text = resultado.set__name;
                 txtRarityR.Text = resultado.rarity.ToUpper();
                 richTextR.Text = cardface.oracle_text;

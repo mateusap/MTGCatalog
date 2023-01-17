@@ -32,5 +32,5 @@ E:\Visual Studio\MTGCatalog\MTGCatalog\bin\Debug\System.ValueTuple.xml
 E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.csproj.CopyComplete
 E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.FormNome.resources
 E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.FormEfeito.resources
-E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.FormCor.resources
 E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.FormTipo.resources
+E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.FormCor.resources

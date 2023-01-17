@@ -15,11 +15,11 @@ using static MTGCatalog.Services.CardModel;
 
 namespace MTGCatalog
 {
+    
     public partial class FormCor : Form
     {
         private CompareAndTypes CompareAndTypes;
         private APIService APISearch;
-
         public FormCor()
         {
             InitializeComponent();
@@ -39,7 +39,6 @@ namespace MTGCatalog
             cBoxCmc.DataSource = CompareAndTypes.ShowCompare();
             cBoxCmc.DisplayMember = "compareDisplay";
             cBoxCmc.ValueMember = "compareUrl";
-
         }
 
         private void btnFnCor_Click(object sender, EventArgs e)
@@ -55,11 +54,12 @@ namespace MTGCatalog
                 listBox1.Visible = false;
                 txtNomeR.Text = lista.name;
                 txtCmcR.Text = lista.cmc.ToString();
+                txtTipo.Text = lista.type_line;
                 txtCorR.Text = String.Join(", ", lista.colors.Select(x => x));
                 txtSetR.Text = lista.set__name;
                 txtRarityR.Text = lista.rarity.ToUpper();
                 richTextR.Text = lista.oracle_text;
-                pBoxCard.Load(lista.image_uris.small);
+                pBoxCard.LoadAsync(lista.image_uris.small);
             }
             else
             {
@@ -69,18 +69,19 @@ namespace MTGCatalog
                 var cardface = lista.card_faces[0];
                 txtNomeR.Text = cardface.name;
                 txtCmcR.Text = cardface.mana_cost;
+                txtTipo.Text = cardface.type_line;
                 txtSetR.Text = lista.set__name;
                 txtRarityR.Text = lista.rarity.ToUpper();
                 richTextR.Text = cardface.oracle_text;
                 try
                 {
                     txtCorR.Text = String.Join(", ", cardface.colors);
-                    pBoxCard.Load(cardface.image_uris.small);
+                    pBoxCard.LoadAsync(cardface.image_uris.small);
                 }
                 catch
                 {
                     txtCorR.Text = String.Join(", ", lista.colors);
-                    pBoxCard.Load(lista.image_uris.small);
+                    pBoxCard.LoadAsync(lista.image_uris.small);
                 }
             }
         }
@@ -92,11 +93,13 @@ namespace MTGCatalog
             richTextR.Text = lista.oracle_text;
             try
             {
+                txtTipo.Text = lista.type_line;
                 txtCorR.Text = String.Join(", ", lista.colors);
-                pBoxCard.Load(lista.image_uris.small);
+                pBoxCard.LoadAsync(lista.image_uris.small);
             }
             catch
             {
+                txtTipo.Text = txtTipo.Text;
                 txtCorR.Text = txtCmcR.Text;
                 pBoxCard.Image = pBoxCard.Image;
             }
@@ -104,9 +107,10 @@ namespace MTGCatalog
 
         private async void ResultadoCorAsync()
         {
-            var parametro = ($"c{cBoxCorIndic.SelectedValue}{cListCores.SelectedValue}+cmc{cBoxCmc.SelectedValue}{txtCusto.Text}");
+            var corzinha = this.cListCores.CheckedItems.Cast<Cores>().Select(x=>x.corUrl);
+            string cores = String.Join("",corzinha); 
+            var parametro = ($"c{cBoxCorIndic.SelectedValue}{cores}+cmc{cBoxCmc.SelectedValue}{txtCusto.Text}");
             var resultado = await APISearch.GetByColorAsync(parametro);
-
             listEfeito.DataSource = resultado.data;
             listEfeito.DisplayMember = "Name";
             qtResultado.Text = $"{listEfeito.Items.Count.ToString()} resultados.";
@@ -131,5 +135,6 @@ namespace MTGCatalog
                 btnFnCor.Enabled = true;
             }
         }
+
     }
 }

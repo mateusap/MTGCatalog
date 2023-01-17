@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCor));
             this.pnlCor = new System.Windows.Forms.Panel();
+            this.txtTipo = new System.Windows.Forms.TextBox();
+            this.lblTipo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cBoxCmc = new System.Windows.Forms.ComboBox();
             this.cBoxCorIndic = new System.Windows.Forms.ComboBox();
@@ -60,6 +62,8 @@
             // 
             this.pnlCor.AutoSize = true;
             this.pnlCor.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pnlCor.Controls.Add(this.txtTipo);
+            this.pnlCor.Controls.Add(this.lblTipo);
             this.pnlCor.Controls.Add(this.label1);
             this.pnlCor.Controls.Add(this.cBoxCmc);
             this.pnlCor.Controls.Add(this.cBoxCorIndic);
@@ -86,8 +90,30 @@
             this.pnlCor.Location = new System.Drawing.Point(0, 0);
             this.pnlCor.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCor.Name = "pnlCor";
-            this.pnlCor.Size = new System.Drawing.Size(618, 314);
+            this.pnlCor.Size = new System.Drawing.Size(618, 347);
             this.pnlCor.TabIndex = 49;
+            // 
+            // txtTipo
+            // 
+            this.txtTipo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipo.Location = new System.Drawing.Point(162, 165);
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.ReadOnly = true;
+            this.txtTipo.Size = new System.Drawing.Size(200, 14);
+            this.txtTipo.TabIndex = 67;
+            this.txtTipo.Text = "(Resultado)";
+            // 
+            // lblTipo
+            // 
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipo.Location = new System.Drawing.Point(32, 165);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(39, 15);
+            this.lblTipo.TabIndex = 66;
+            this.lblTipo.Text = "Tipo:";
             // 
             // label1
             // 
@@ -121,7 +147,7 @@
             // qtResultado
             // 
             this.qtResultado.AutoSize = true;
-            this.qtResultado.Location = new System.Drawing.Point(485, 74);
+            this.qtResultado.Location = new System.Drawing.Point(500, 114);
             this.qtResultado.Name = "qtResultado";
             this.qtResultado.Size = new System.Drawing.Size(0, 13);
             this.qtResultado.TabIndex = 60;
@@ -161,7 +187,7 @@
             this.txtRarityR.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.txtRarityR.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRarityR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRarityR.Location = new System.Drawing.Point(162, 189);
+            this.txtRarityR.Location = new System.Drawing.Point(162, 214);
             this.txtRarityR.Name = "txtRarityR";
             this.txtRarityR.ReadOnly = true;
             this.txtRarityR.Size = new System.Drawing.Size(100, 14);
@@ -173,7 +199,7 @@
             this.txtSetR.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.txtSetR.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSetR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSetR.Location = new System.Drawing.Point(162, 164);
+            this.txtSetR.Location = new System.Drawing.Point(162, 189);
             this.txtSetR.Name = "txtSetR";
             this.txtSetR.ReadOnly = true;
             this.txtSetR.Size = new System.Drawing.Size(250, 14);
@@ -221,7 +247,7 @@
             this.richTextR.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.richTextR.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextR.Location = new System.Drawing.Point(162, 214);
+            this.richTextR.Location = new System.Drawing.Point(162, 239);
             this.richTextR.Name = "richTextR";
             this.richTextR.ReadOnly = true;
             this.richTextR.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
@@ -234,7 +260,7 @@
             this.pBoxCard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pBoxCard.BackgroundImage")));
             this.pBoxCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pBoxCard.InitialImage = null;
-            this.pBoxCard.Location = new System.Drawing.Point(460, 98);
+            this.pBoxCard.Location = new System.Drawing.Point(460, 131);
             this.pBoxCard.Name = "pBoxCard";
             this.pBoxCard.Size = new System.Drawing.Size(146, 204);
             this.pBoxCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -245,7 +271,7 @@
             // 
             this.lblText.AutoSize = true;
             this.lblText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblText.Location = new System.Drawing.Point(32, 214);
+            this.lblText.Location = new System.Drawing.Point(32, 239);
             this.lblText.Name = "lblText";
             this.lblText.Size = new System.Drawing.Size(48, 15);
             this.lblText.TabIndex = 49;
@@ -255,7 +281,7 @@
             // 
             this.lblRarity.AutoSize = true;
             this.lblRarity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRarity.Location = new System.Drawing.Point(31, 189);
+            this.lblRarity.Location = new System.Drawing.Point(31, 214);
             this.lblRarity.Name = "lblRarity";
             this.lblRarity.Size = new System.Drawing.Size(66, 15);
             this.lblRarity.TabIndex = 48;
@@ -265,7 +291,7 @@
             // 
             this.lblSet.AutoSize = true;
             this.lblSet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSet.Location = new System.Drawing.Point(31, 164);
+            this.lblSet.Location = new System.Drawing.Point(31, 189);
             this.lblSet.Name = "lblSet";
             this.lblSet.Size = new System.Drawing.Size(63, 15);
             this.lblSet.TabIndex = 47;
@@ -307,7 +333,7 @@
             this.listEfeito.FormattingEnabled = true;
             this.listEfeito.Location = new System.Drawing.Point(418, 3);
             this.listEfeito.Name = "listEfeito";
-            this.listEfeito.Size = new System.Drawing.Size(188, 69);
+            this.listEfeito.Size = new System.Drawing.Size(188, 108);
             this.listEfeito.TabIndex = 43;
             this.listEfeito.DoubleClick += new System.EventHandler(this.listEfeito_DoubleClick);
             // 
@@ -326,7 +352,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(618, 314);
+            this.ClientSize = new System.Drawing.Size(618, 347);
             this.Controls.Add(this.pnlCor);
             this.Name = "FormCor";
             this.Text = "FormCor";
@@ -363,5 +389,7 @@
         private System.Windows.Forms.ComboBox cBoxCmc;
         private System.Windows.Forms.ComboBox cBoxCorIndic;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtTipo;
+        private System.Windows.Forms.Label lblTipo;
     }
 }
