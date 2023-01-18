@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTipo));
             this.pnlCor = new System.Windows.Forms.Panel();
+            this.txtTipo = new System.Windows.Forms.TextBox();
+            this.lblTipo = new System.Windows.Forms.Label();
             this.cbTipos = new System.Windows.Forms.ComboBox();
             this.qtResultado = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -48,8 +50,6 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.listEfeito = new System.Windows.Forms.ListBox();
             this.btnFnTipo = new System.Windows.Forms.Button();
-            this.txtTipo = new System.Windows.Forms.TextBox();
-            this.lblTipo = new System.Windows.Forms.Label();
             this.pnlCor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxCard)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +84,28 @@
             this.pnlCor.Name = "pnlCor";
             this.pnlCor.Size = new System.Drawing.Size(618, 347);
             this.pnlCor.TabIndex = 50;
+            // 
+            // txtTipo
+            // 
+            this.txtTipo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipo.Location = new System.Drawing.Point(162, 165);
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.ReadOnly = true;
+            this.txtTipo.Size = new System.Drawing.Size(200, 14);
+            this.txtTipo.TabIndex = 63;
+            this.txtTipo.Text = "(Resultado)";
+            // 
+            // lblTipo
+            // 
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipo.Location = new System.Drawing.Point(31, 165);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(39, 15);
+            this.lblTipo.TabIndex = 62;
+            this.lblTipo.Text = "Tipo:";
             // 
             // cbTipos
             // 
@@ -205,7 +227,7 @@
             // 
             this.lblText.AutoSize = true;
             this.lblText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblText.Location = new System.Drawing.Point(32, 239);
+            this.lblText.Location = new System.Drawing.Point(31, 239);
             this.lblText.Name = "lblText";
             this.lblText.Size = new System.Drawing.Size(48, 15);
             this.lblText.TabIndex = 49;
@@ -281,28 +303,6 @@
             this.btnFnTipo.Text = "Buscar";
             this.btnFnTipo.UseVisualStyleBackColor = true;
             this.btnFnTipo.Click += new System.EventHandler(this.btnFnTipo_Click);
-            // 
-            // txtTipo
-            // 
-            this.txtTipo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipo.Location = new System.Drawing.Point(162, 165);
-            this.txtTipo.Name = "txtTipo";
-            this.txtTipo.ReadOnly = true;
-            this.txtTipo.Size = new System.Drawing.Size(200, 14);
-            this.txtTipo.TabIndex = 63;
-            this.txtTipo.Text = "(Resultado)";
-            // 
-            // lblTipo
-            // 
-            this.lblTipo.AutoSize = true;
-            this.lblTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipo.Location = new System.Drawing.Point(32, 165);
-            this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(39, 15);
-            this.lblTipo.TabIndex = 62;
-            this.lblTipo.Text = "Tipo:";
             // 
             // FormTipo
             // 

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEfeito));
             this.pnlEfeito = new System.Windows.Forms.Panel();
+            this.txtTipo = new System.Windows.Forms.TextBox();
+            this.lblTipo = new System.Windows.Forms.Label();
             this.qtResultado = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.txtRarityR = new System.Windows.Forms.TextBox();
@@ -49,8 +51,6 @@
             this.btnFnEfeito = new System.Windows.Forms.Button();
             this.lblDescEfeito = new System.Windows.Forms.Label();
             this.tBoxEfeito = new System.Windows.Forms.TextBox();
-            this.txtTipo = new System.Windows.Forms.TextBox();
-            this.lblTipo = new System.Windows.Forms.Label();
             this.pnlEfeito.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxCard)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +86,28 @@
             this.pnlEfeito.Name = "pnlEfeito";
             this.pnlEfeito.Size = new System.Drawing.Size(618, 347);
             this.pnlEfeito.TabIndex = 48;
+            // 
+            // txtTipo
+            // 
+            this.txtTipo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipo.Location = new System.Drawing.Point(162, 165);
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.ReadOnly = true;
+            this.txtTipo.Size = new System.Drawing.Size(200, 14);
+            this.txtTipo.TabIndex = 65;
+            this.txtTipo.Text = "(Resultado)";
+            // 
+            // lblTipo
+            // 
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipo.Location = new System.Drawing.Point(31, 165);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(39, 15);
+            this.lblTipo.TabIndex = 64;
+            this.lblTipo.Text = "Tipo:";
             // 
             // qtResultado
             // 
@@ -195,7 +217,7 @@
             // 
             this.lblText.AutoSize = true;
             this.lblText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblText.Location = new System.Drawing.Point(32, 239);
+            this.lblText.Location = new System.Drawing.Point(31, 239);
             this.lblText.Name = "lblText";
             this.lblText.Size = new System.Drawing.Size(48, 15);
             this.lblText.TabIndex = 49;
@@ -264,7 +286,7 @@
             // btnFnEfeito
             // 
             this.btnFnEfeito.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnFnEfeito.Location = new System.Drawing.Point(234, 12);
+            this.btnFnEfeito.Location = new System.Drawing.Point(295, 13);
             this.btnFnEfeito.Name = "btnFnEfeito";
             this.btnFnEfeito.Size = new System.Drawing.Size(75, 23);
             this.btnFnEfeito.TabIndex = 42;
@@ -274,7 +296,7 @@
             // 
             // lblDescEfeito
             // 
-            this.lblDescEfeito.Location = new System.Drawing.Point(34, 38);
+            this.lblDescEfeito.Location = new System.Drawing.Point(35, 39);
             this.lblDescEfeito.Name = "lblDescEfeito";
             this.lblDescEfeito.Size = new System.Drawing.Size(177, 32);
             this.lblDescEfeito.TabIndex = 41;
@@ -284,34 +306,12 @@
             // tBoxEfeito
             // 
             this.tBoxEfeito.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBoxEfeito.Location = new System.Drawing.Point(34, 12);
+            this.tBoxEfeito.Location = new System.Drawing.Point(35, 14);
             this.tBoxEfeito.Name = "tBoxEfeito";
             this.tBoxEfeito.Size = new System.Drawing.Size(177, 23);
             this.tBoxEfeito.TabIndex = 40;
             this.tBoxEfeito.TextChanged += new System.EventHandler(this.tBoxEfeito_TextChanged);
             this.tBoxEfeito.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBoxEfeito_KeyDown);
-            // 
-            // txtTipo
-            // 
-            this.txtTipo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipo.Location = new System.Drawing.Point(162, 165);
-            this.txtTipo.Name = "txtTipo";
-            this.txtTipo.ReadOnly = true;
-            this.txtTipo.Size = new System.Drawing.Size(200, 14);
-            this.txtTipo.TabIndex = 65;
-            this.txtTipo.Text = "(Resultado)";
-            // 
-            // lblTipo
-            // 
-            this.lblTipo.AutoSize = true;
-            this.lblTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipo.Location = new System.Drawing.Point(32, 165);
-            this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(39, 15);
-            this.lblTipo.TabIndex = 64;
-            this.lblTipo.Text = "Tipo:";
             // 
             // FormEfeito
             // 
