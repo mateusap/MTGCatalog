@@ -36,6 +36,7 @@
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnAvanc = new System.Windows.Forms.Button();
             this.btnStatus = new System.Windows.Forms.Button();
             this.btnBuscaTipo = new System.Windows.Forms.Button();
             this.btnBuscaCorCMC = new System.Windows.Forms.Button();
@@ -58,7 +59,7 @@
             this.panelCabecalho.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCabecalho.Location = new System.Drawing.Point(0, 0);
             this.panelCabecalho.Name = "panelCabecalho";
-            this.panelCabecalho.Size = new System.Drawing.Size(754, 30);
+            this.panelCabecalho.Size = new System.Drawing.Size(821, 30);
             this.panelCabecalho.TabIndex = 0;
             this.panelCabecalho.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelCabecalho_MouseMove);
             // 
@@ -83,7 +84,7 @@
             this.btnRestaurar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
-            this.btnRestaurar.Location = new System.Drawing.Point(688, 0);
+            this.btnRestaurar.Location = new System.Drawing.Point(755, 0);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(30, 30);
             this.btnRestaurar.TabIndex = 3;
@@ -98,7 +99,7 @@
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(652, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(719, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(30, 30);
             this.btnMinimizar.TabIndex = 2;
@@ -115,7 +116,7 @@
             this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
-            this.btnFechar.Location = new System.Drawing.Point(721, 0);
+            this.btnFechar.Location = new System.Drawing.Point(788, 0);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(30, 30);
             this.btnFechar.TabIndex = 0;
@@ -131,7 +132,7 @@
             this.btnMaximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
-            this.btnMaximizar.Location = new System.Drawing.Point(688, 0);
+            this.btnMaximizar.Location = new System.Drawing.Point(721, 0);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(30, 30);
             this.btnMaximizar.TabIndex = 1;
@@ -141,6 +142,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.panelMenu.Controls.Add(this.btnAvanc);
             this.panelMenu.Controls.Add(this.btnStatus);
             this.panelMenu.Controls.Add(this.btnBuscaTipo);
             this.panelMenu.Controls.Add(this.btnBuscaCorCMC);
@@ -150,8 +152,24 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 30);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(136, 347);
+            this.panelMenu.Size = new System.Drawing.Size(136, 412);
             this.panelMenu.TabIndex = 2;
+            // 
+            // btnAvanc
+            // 
+            this.btnAvanc.FlatAppearance.BorderSize = 0;
+            this.btnAvanc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAvanc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAvanc.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAvanc.Image = ((System.Drawing.Image)(resources.GetObject("btnAvanc.Image")));
+            this.btnAvanc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAvanc.Location = new System.Drawing.Point(0, 253);
+            this.btnAvanc.Name = "btnAvanc";
+            this.btnAvanc.Size = new System.Drawing.Size(136, 44);
+            this.btnAvanc.TabIndex = 6;
+            this.btnAvanc.Text = "     Busca\r\n     Avançada\r\n";
+            this.btnAvanc.UseVisualStyleBackColor = true;
+            this.btnAvanc.Click += new System.EventHandler(this.btnAvanc_Click);
             // 
             // btnStatus
             // 
@@ -253,7 +271,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(136, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(618, 347);
+            this.panel1.Size = new System.Drawing.Size(685, 412);
             this.panel1.TabIndex = 46;
             // 
             // FormHome
@@ -261,7 +279,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(754, 377);
+            this.ClientSize = new System.Drawing.Size(821, 442);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelCabecalho);
@@ -293,6 +311,7 @@
         private System.Windows.Forms.Label lblMenu;
         private System.Windows.Forms.Button btnBuscaNome;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnAvanc;
     }
 }
 

@@ -68,6 +68,7 @@ namespace MTGCatalog
             FecharFormNoPanel<FormCor>();
             FecharFormNoPanel<FormTipo>();
             FecharFormNoPanel<FormStatus>();
+            FecharFormNoPanel<FormAvancado>();
         }
 
         private void btnBuscaEfeito_Click(object sender, EventArgs e)
@@ -77,6 +78,7 @@ namespace MTGCatalog
             FecharFormNoPanel<FormCor>();
             FecharFormNoPanel<FormTipo>();
             FecharFormNoPanel<FormStatus>();
+            FecharFormNoPanel<FormAvancado>();
         }
 
         private void btnBuscaCorCMC_Click(object sender, EventArgs e)
@@ -86,6 +88,7 @@ namespace MTGCatalog
             FecharFormNoPanel<FormEfeito>();
             FecharFormNoPanel<FormTipo>();
             FecharFormNoPanel<FormStatus>();
+            FecharFormNoPanel<FormAvancado>();
         }
 
         private void btnBuscaTipo_Click(object sender, EventArgs e)
@@ -95,6 +98,7 @@ namespace MTGCatalog
             FecharFormNoPanel<FormNome>();
             FecharFormNoPanel<FormEfeito>();
             FecharFormNoPanel<FormStatus>();
+            FecharFormNoPanel<FormAvancado>();
         }
 
         private void btnStatus_Click(object sender, EventArgs e)
@@ -104,8 +108,17 @@ namespace MTGCatalog
             FecharFormNoPanel<FormNome>();
             FecharFormNoPanel<FormEfeito>();
             FecharFormNoPanel<FormTipo>();
+            FecharFormNoPanel<FormAvancado>();
         }
-
+        private void btnAvanc_Click(object sender, EventArgs e)
+        {
+            AbrirFormNoPanel<FormAvancado>();
+            FecharFormNoPanel<FormCor>();
+            FecharFormNoPanel<FormNome>();
+            FecharFormNoPanel<FormEfeito>();
+            FecharFormNoPanel<FormTipo>();
+            FecharFormNoPanel<FormStatus>();
+        }
         private void AbrirFormNoPanel<Forms>() where Forms : Form, new()
         {
             Form form;
@@ -137,5 +150,7 @@ namespace MTGCatalog
                 form.Dispose();
             }
         }
+
+        
     }
 }

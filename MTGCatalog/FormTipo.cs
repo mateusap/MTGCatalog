@@ -35,10 +35,17 @@ namespace MTGCatalog
 
         private async void ResultadoTipoAsync()
         {
-            var resultado = await APISearch.GetByTypeAsync(cbTipos.SelectedValue.ToString());
-            listEfeito.DataSource = resultado.data;
-            listEfeito.DisplayMember = "Name";
-            qtResultado.Text = $"{listEfeito.Items.Count.ToString()} resultados.";
+            if (cbTipos.SelectedIndex == 0)
+            {
+                MessageBox.Show("Selecione um tipo de carta.");
+            }
+            else
+            {
+                var resultado = await APISearch.GetByTypeAsync(cbTipos.SelectedValue.ToString());
+                listEfeito.DataSource = resultado.data;
+                listEfeito.DisplayMember = "Name";
+                qtResultado.Text = $"{listEfeito.Items.Count.ToString()} resultados.";
+            }
         }
 
         private void listEfeito_DoubleClick(object sender, EventArgs e)

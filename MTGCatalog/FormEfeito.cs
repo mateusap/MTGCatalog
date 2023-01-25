@@ -121,5 +121,23 @@ namespace MTGCatalog
                 btnFnEfeito_Click(this, new EventArgs());
             }
         }
+
+        private void tBoxEfeito_Enter(object sender, EventArgs e)
+        {
+            if (tBoxEfeito.Text == "Digite parte do texto")
+            {
+                tBoxEfeito.Text = "";
+                tBoxEfeito.ForeColor = Color.Black;
+            }
+        }
+
+        private void tBoxEfeito_Leave(object sender, EventArgs e)
+        {
+            if (tBoxEfeito.Text == "")
+            {
+                tBoxEfeito.Text = "Digite parte do texto";
+                tBoxEfeito.ForeColor = Color.LightGray;
+            }
+        }
     }
 }

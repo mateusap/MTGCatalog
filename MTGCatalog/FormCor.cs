@@ -136,5 +136,22 @@ namespace MTGCatalog
             }
         }
 
+        private void txtCusto_Enter(object sender, EventArgs e)
+        {
+            if (txtCusto.Text == "Custo")
+            {
+                txtCusto.Text = "";
+                txtCusto.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtCusto_Leave(object sender, EventArgs e)
+        {
+            if (txtCusto.Text == "")
+            {
+                txtCusto.Text = "Custo";
+                txtCusto.ForeColor = Color.LightGray;
+            }
+        }
     }
 }

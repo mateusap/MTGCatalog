@@ -1,6 +1,6 @@
 ﻿namespace MTGCatalog
 {
-    partial class FormCor
+    partial class FormAvancado
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAvancado));
             this.pnlCor = new System.Windows.Forms.Panel();
-            this.txtTipo = new System.Windows.Forms.TextBox();
-            this.lblTipo = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cBoxLoyal = new System.Windows.Forms.ComboBox();
+            this.txtLoyal = new System.Windows.Forms.TextBox();
+            this.cBoxResist = new System.Windows.Forms.ComboBox();
+            this.txtResist = new System.Windows.Forms.TextBox();
+            this.cBoxPoder = new System.Windows.Forms.ComboBox();
+            this.txtPoder = new System.Windows.Forms.TextBox();
+            this.cbTipos = new System.Windows.Forms.ComboBox();
             this.cBoxCmc = new System.Windows.Forms.ComboBox();
             this.cBoxCorIndic = new System.Windows.Forms.ComboBox();
-            this.qtResultado = new System.Windows.Forms.Label();
             this.txtCusto = new System.Windows.Forms.TextBox();
             this.cListCores = new System.Windows.Forms.CheckedListBox();
+            this.tBoxEfeito = new System.Windows.Forms.TextBox();
+            this.tBoxNome = new System.Windows.Forms.TextBox();
+            this.btnFnBusca = new System.Windows.Forms.Button();
+            this.txtTipo = new System.Windows.Forms.TextBox();
+            this.lblTipo = new System.Windows.Forms.Label();
+            this.qtResultado = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.txtRarityR = new System.Windows.Forms.TextBox();
             this.txtSetR = new System.Windows.Forms.TextBox();
@@ -52,7 +63,6 @@
             this.lblCmc = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.listEfeito = new System.Windows.Forms.ListBox();
-            this.btnFnCor = new System.Windows.Forms.Button();
             this.pnlCor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxCard)).BeginInit();
             this.SuspendLayout();
@@ -61,13 +71,24 @@
             // 
             this.pnlCor.AutoSize = true;
             this.pnlCor.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.pnlCor.Controls.Add(this.txtTipo);
-            this.pnlCor.Controls.Add(this.lblTipo);
+            this.pnlCor.Controls.Add(this.comboBox1);
+            this.pnlCor.Controls.Add(this.cBoxLoyal);
+            this.pnlCor.Controls.Add(this.txtLoyal);
+            this.pnlCor.Controls.Add(this.cBoxResist);
+            this.pnlCor.Controls.Add(this.txtResist);
+            this.pnlCor.Controls.Add(this.cBoxPoder);
+            this.pnlCor.Controls.Add(this.txtPoder);
+            this.pnlCor.Controls.Add(this.cbTipos);
             this.pnlCor.Controls.Add(this.cBoxCmc);
             this.pnlCor.Controls.Add(this.cBoxCorIndic);
-            this.pnlCor.Controls.Add(this.qtResultado);
             this.pnlCor.Controls.Add(this.txtCusto);
             this.pnlCor.Controls.Add(this.cListCores);
+            this.pnlCor.Controls.Add(this.tBoxEfeito);
+            this.pnlCor.Controls.Add(this.tBoxNome);
+            this.pnlCor.Controls.Add(this.btnFnBusca);
+            this.pnlCor.Controls.Add(this.txtTipo);
+            this.pnlCor.Controls.Add(this.lblTipo);
+            this.pnlCor.Controls.Add(this.qtResultado);
             this.pnlCor.Controls.Add(this.listBox1);
             this.pnlCor.Controls.Add(this.txtRarityR);
             this.pnlCor.Controls.Add(this.txtSetR);
@@ -83,13 +104,177 @@
             this.pnlCor.Controls.Add(this.lblCmc);
             this.pnlCor.Controls.Add(this.lblNome);
             this.pnlCor.Controls.Add(this.listEfeito);
-            this.pnlCor.Controls.Add(this.btnFnCor);
             this.pnlCor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCor.Location = new System.Drawing.Point(0, 0);
             this.pnlCor.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCor.Name = "pnlCor";
             this.pnlCor.Size = new System.Drawing.Size(685, 412);
-            this.pnlCor.TabIndex = 49;
+            this.pnlCor.TabIndex = 51;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Selecione",
+            "Criatura",
+            "Planeswalker"});
+            this.comboBox1.Location = new System.Drawing.Point(12, 96);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(99, 23);
+            this.comboBox1.TabIndex = 81;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // cBoxLoyal
+            // 
+            this.cBoxLoyal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBoxLoyal.FormattingEnabled = true;
+            this.cBoxLoyal.Location = new System.Drawing.Point(141, 98);
+            this.cBoxLoyal.Name = "cBoxLoyal";
+            this.cBoxLoyal.Size = new System.Drawing.Size(93, 21);
+            this.cBoxLoyal.TabIndex = 80;
+            // 
+            // txtLoyal
+            // 
+            this.txtLoyal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLoyal.ForeColor = System.Drawing.Color.LightGray;
+            this.txtLoyal.Location = new System.Drawing.Point(240, 98);
+            this.txtLoyal.Name = "txtLoyal";
+            this.txtLoyal.Size = new System.Drawing.Size(59, 21);
+            this.txtLoyal.TabIndex = 79;
+            this.txtLoyal.Text = "Lealdade";
+            this.txtLoyal.Enter += new System.EventHandler(this.txtLoyal_Enter);
+            this.txtLoyal.Leave += new System.EventHandler(this.txtLoyal_Leave);
+            // 
+            // cBoxResist
+            // 
+            this.cBoxResist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBoxResist.FormattingEnabled = true;
+            this.cBoxResist.Location = new System.Drawing.Point(313, 98);
+            this.cBoxResist.Name = "cBoxResist";
+            this.cBoxResist.Size = new System.Drawing.Size(93, 21);
+            this.cBoxResist.TabIndex = 78;
+            // 
+            // txtResist
+            // 
+            this.txtResist.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResist.ForeColor = System.Drawing.Color.LightGray;
+            this.txtResist.Location = new System.Drawing.Point(412, 98);
+            this.txtResist.Name = "txtResist";
+            this.txtResist.Size = new System.Drawing.Size(59, 21);
+            this.txtResist.TabIndex = 77;
+            this.txtResist.Text = "Resist.";
+            this.txtResist.Enter += new System.EventHandler(this.txtResist_Enter);
+            this.txtResist.Leave += new System.EventHandler(this.txtResist_Leave);
+            // 
+            // cBoxPoder
+            // 
+            this.cBoxPoder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBoxPoder.FormattingEnabled = true;
+            this.cBoxPoder.Location = new System.Drawing.Point(141, 98);
+            this.cBoxPoder.Name = "cBoxPoder";
+            this.cBoxPoder.Size = new System.Drawing.Size(93, 21);
+            this.cBoxPoder.TabIndex = 76;
+            // 
+            // txtPoder
+            // 
+            this.txtPoder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPoder.ForeColor = System.Drawing.Color.LightGray;
+            this.txtPoder.Location = new System.Drawing.Point(240, 98);
+            this.txtPoder.Name = "txtPoder";
+            this.txtPoder.Size = new System.Drawing.Size(59, 21);
+            this.txtPoder.TabIndex = 75;
+            this.txtPoder.Text = "Poder";
+            this.txtPoder.Enter += new System.EventHandler(this.txtPoder_Enter);
+            this.txtPoder.Leave += new System.EventHandler(this.txtPoder_Leave);
+            // 
+            // cbTipos
+            // 
+            this.cbTipos.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbTipos.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbTipos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTipos.FormattingEnabled = true;
+            this.cbTipos.Location = new System.Drawing.Point(277, 39);
+            this.cbTipos.Name = "cbTipos";
+            this.cbTipos.Size = new System.Drawing.Size(191, 23);
+            this.cbTipos.TabIndex = 74;
+            this.cbTipos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbTipos_KeyDown);
+            // 
+            // cBoxCmc
+            // 
+            this.cBoxCmc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBoxCmc.FormattingEnabled = true;
+            this.cBoxCmc.Location = new System.Drawing.Point(141, 69);
+            this.cBoxCmc.Name = "cBoxCmc";
+            this.cBoxCmc.Size = new System.Drawing.Size(121, 21);
+            this.cBoxCmc.TabIndex = 73;
+            // 
+            // cBoxCorIndic
+            // 
+            this.cBoxCorIndic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBoxCorIndic.FormattingEnabled = true;
+            this.cBoxCorIndic.Location = new System.Drawing.Point(141, 41);
+            this.cBoxCorIndic.Name = "cBoxCorIndic";
+            this.cBoxCorIndic.Size = new System.Drawing.Size(121, 21);
+            this.cBoxCorIndic.TabIndex = 72;
+            // 
+            // txtCusto
+            // 
+            this.txtCusto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCusto.ForeColor = System.Drawing.Color.LightGray;
+            this.txtCusto.Location = new System.Drawing.Point(277, 68);
+            this.txtCusto.Name = "txtCusto";
+            this.txtCusto.Size = new System.Drawing.Size(75, 20);
+            this.txtCusto.TabIndex = 71;
+            this.txtCusto.Text = "Custo";
+            this.txtCusto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCusto.Enter += new System.EventHandler(this.txtCusto_Enter);
+            this.txtCusto.Leave += new System.EventHandler(this.txtCusto_Leave);
+            // 
+            // cListCores
+            // 
+            this.cListCores.CheckOnClick = true;
+            this.cListCores.FormattingEnabled = true;
+            this.cListCores.Location = new System.Drawing.Point(12, 41);
+            this.cListCores.Name = "cListCores";
+            this.cListCores.Size = new System.Drawing.Size(120, 49);
+            this.cListCores.TabIndex = 70;
+            // 
+            // tBoxEfeito
+            // 
+            this.tBoxEfeito.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBoxEfeito.ForeColor = System.Drawing.Color.LightGray;
+            this.tBoxEfeito.Location = new System.Drawing.Point(219, 12);
+            this.tBoxEfeito.Name = "tBoxEfeito";
+            this.tBoxEfeito.Size = new System.Drawing.Size(177, 23);
+            this.tBoxEfeito.TabIndex = 69;
+            this.tBoxEfeito.Text = "Digite parte do texto";
+            this.tBoxEfeito.Enter += new System.EventHandler(this.tBoxEfeito_Enter);
+            this.tBoxEfeito.Leave += new System.EventHandler(this.tBoxEfeito_Leave);
+            // 
+            // tBoxNome
+            // 
+            this.tBoxNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tBoxNome.ForeColor = System.Drawing.Color.LightGray;
+            this.tBoxNome.Location = new System.Drawing.Point(12, 12);
+            this.tBoxNome.Name = "tBoxNome";
+            this.tBoxNome.Size = new System.Drawing.Size(177, 23);
+            this.tBoxNome.TabIndex = 68;
+            this.tBoxNome.Text = "Digite o nome da carta";
+            this.tBoxNome.Enter += new System.EventHandler(this.tBoxNome_Enter);
+            this.tBoxNome.Leave += new System.EventHandler(this.tBoxNome_Leave);
+            // 
+            // btnFnBusca
+            // 
+            this.btnFnBusca.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnFnBusca.Location = new System.Drawing.Point(422, 12);
+            this.btnFnBusca.Name = "btnFnBusca";
+            this.btnFnBusca.Size = new System.Drawing.Size(75, 23);
+            this.btnFnBusca.TabIndex = 52;
+            this.btnFnBusca.Text = "Buscar";
+            this.btnFnBusca.UseVisualStyleBackColor = true;
+            this.btnFnBusca.Click += new System.EventHandler(this.btnFnBusca_Click);
             // 
             // txtTipo
             // 
@@ -113,24 +298,6 @@
             this.lblTipo.TabIndex = 66;
             this.lblTipo.Text = "Tipo:";
             // 
-            // cBoxCmc
-            // 
-            this.cBoxCmc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cBoxCmc.FormattingEnabled = true;
-            this.cBoxCmc.Location = new System.Drawing.Point(180, 65);
-            this.cBoxCmc.Name = "cBoxCmc";
-            this.cBoxCmc.Size = new System.Drawing.Size(121, 21);
-            this.cBoxCmc.TabIndex = 62;
-            // 
-            // cBoxCorIndic
-            // 
-            this.cBoxCorIndic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cBoxCorIndic.FormattingEnabled = true;
-            this.cBoxCorIndic.Location = new System.Drawing.Point(180, 14);
-            this.cBoxCorIndic.Name = "cBoxCorIndic";
-            this.cBoxCorIndic.Size = new System.Drawing.Size(121, 21);
-            this.cBoxCorIndic.TabIndex = 61;
-            // 
             // qtResultado
             // 
             this.qtResultado.AutoSize = true;
@@ -139,30 +306,6 @@
             this.qtResultado.Size = new System.Drawing.Size(108, 13);
             this.qtResultado.TabIndex = 60;
             this.qtResultado.Text = "Resultados da Busca";
-            // 
-            // txtCusto
-            // 
-            this.txtCusto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusto.ForeColor = System.Drawing.Color.LightGray;
-            this.txtCusto.Location = new System.Drawing.Point(331, 65);
-            this.txtCusto.Name = "txtCusto";
-            this.txtCusto.Size = new System.Drawing.Size(75, 20);
-            this.txtCusto.TabIndex = 59;
-            this.txtCusto.Text = "Custo";
-            this.txtCusto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCusto.Enter += new System.EventHandler(this.txtCusto_Enter);
-            this.txtCusto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCusto_KeyDown);
-            this.txtCusto.Leave += new System.EventHandler(this.txtCusto_Leave);
-            // 
-            // cListCores
-            // 
-            this.cListCores.CheckOnClick = true;
-            this.cListCores.FormattingEnabled = true;
-            this.cListCores.Location = new System.Drawing.Point(28, 12);
-            this.cListCores.Name = "cListCores";
-            this.cListCores.Size = new System.Drawing.Size(120, 94);
-            this.cListCores.TabIndex = 58;
-            this.cListCores.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.cListCores_ItemCheck);
             // 
             // listBox1
             // 
@@ -250,6 +393,7 @@
             // 
             // pBoxCard
             // 
+            this.pBoxCard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pBoxCard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pBoxCard.BackgroundImage")));
             this.pBoxCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pBoxCard.InitialImage = null;
@@ -322,6 +466,8 @@
             // 
             // listEfeito
             // 
+            this.listEfeito.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listEfeito.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listEfeito.FormattingEnabled = true;
             this.listEfeito.Location = new System.Drawing.Point(527, 3);
@@ -330,25 +476,14 @@
             this.listEfeito.TabIndex = 43;
             this.listEfeito.DoubleClick += new System.EventHandler(this.listEfeito_DoubleClick);
             // 
-            // btnFnCor
-            // 
-            this.btnFnCor.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnFnCor.Location = new System.Drawing.Point(422, 12);
-            this.btnFnCor.Name = "btnFnCor";
-            this.btnFnCor.Size = new System.Drawing.Size(75, 23);
-            this.btnFnCor.TabIndex = 42;
-            this.btnFnCor.Text = "Buscar";
-            this.btnFnCor.UseVisualStyleBackColor = true;
-            this.btnFnCor.Click += new System.EventHandler(this.btnFnCor_Click);
-            // 
-            // FormCor
+            // FormAvancado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(685, 412);
             this.Controls.Add(this.pnlCor);
-            this.Name = "FormCor";
-            this.Text = "FormCor";
+            this.Name = "FormAvancado";
+            this.Text = "FormAvancado";
             this.pnlCor.ResumeLayout(false);
             this.pnlCor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxCard)).EndInit();
@@ -360,6 +495,9 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlCor;
+        private System.Windows.Forms.TextBox txtTipo;
+        private System.Windows.Forms.Label lblTipo;
+        private System.Windows.Forms.Label qtResultado;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox txtRarityR;
         private System.Windows.Forms.TextBox txtSetR;
@@ -375,13 +513,20 @@
         private System.Windows.Forms.Label lblCmc;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.ListBox listEfeito;
-        private System.Windows.Forms.Button btnFnCor;
-        private System.Windows.Forms.TextBox txtCusto;
+        private System.Windows.Forms.Button btnFnBusca;
+        private System.Windows.Forms.TextBox tBoxNome;
+        private System.Windows.Forms.TextBox tBoxEfeito;
         private System.Windows.Forms.CheckedListBox cListCores;
-        private System.Windows.Forms.Label qtResultado;
         private System.Windows.Forms.ComboBox cBoxCmc;
         private System.Windows.Forms.ComboBox cBoxCorIndic;
-        private System.Windows.Forms.TextBox txtTipo;
-        private System.Windows.Forms.Label lblTipo;
+        private System.Windows.Forms.TextBox txtCusto;
+        private System.Windows.Forms.ComboBox cbTipos;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cBoxLoyal;
+        private System.Windows.Forms.TextBox txtLoyal;
+        private System.Windows.Forms.ComboBox cBoxResist;
+        private System.Windows.Forms.TextBox txtResist;
+        private System.Windows.Forms.ComboBox cBoxPoder;
+        private System.Windows.Forms.TextBox txtPoder;
     }
 }

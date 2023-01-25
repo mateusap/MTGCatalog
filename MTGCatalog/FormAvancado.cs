@@ -9,58 +9,65 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static MTGCatalog.Services.CardModel;
+using static MTGCatalog.Services.CompareAndTypes;
 
 namespace MTGCatalog
 {
-    public partial class FormStatus : Form
+    public partial class FormAvancado : Form
     {
-        private CompareAndTypes CompareAndTypes;
         private APIService APISearch;
-        public FormStatus()
+        private CompareAndTypes CompareAndTypes;
+        public FormAvancado()
         {
             InitializeComponent();
             DoubleBuffered = true;
             APISearch = new APIService();
             CompareAndTypes = new CompareAndTypes();
+            listBox1.Visible = false;
+
+            cbTipos.DataSource = CompareAndTypes.ShowTypes();
+            cbTipos.DisplayMember = "typeDisplay";
+            cbTipos.ValueMember = "typeUrl";
+
+            ((ListBox)cListCores).DataSource = CompareAndTypes.ShowColors();
+            ((ListBox)cListCores).DisplayMember = "corDisplay";
+            ((ListBox)cListCores).ValueMember = "corUrl";
+
+            cBoxCorIndic.DataSource = CompareAndTypes.ShowColorIndic();
+            cBoxCorIndic.DisplayMember = "colorIndicDisplay";
+            cBoxCorIndic.ValueMember = "colorIndicUrl";
+
+            cBoxCmc.DataSource = CompareAndTypes.ShowCompare();
+            cBoxCmc.DisplayMember = "compareDisplay";
+            cBoxCmc.ValueMember = "compareUrl";
+
             cBoxPoder.DataSource = CompareAndTypes.ShowCompare();
             cBoxPoder.DisplayMember = "compareDisplay";
             cBoxPoder.ValueMember = "compareUrl";
+
             cBoxResist.DataSource = CompareAndTypes.ShowCompare();
             cBoxResist.DisplayMember = "compareDisplay";
             cBoxResist.ValueMember = "compareUrl";
+
             cBoxLoyal.DataSource = CompareAndTypes.ShowCompare();
             cBoxLoyal.DisplayMember = "compareDisplay";
             cBoxLoyal.ValueMember = "compareUrl";
             comboBox1.SelectedIndex = 0;
-            listBox1.Visible = false;
         }
 
-        private void btnFnStatus_Click(object sender, EventArgs e)
+        private void btnFnBusca_Click(object sender, EventArgs e)
         {
-            ResultadoStatusAsync();
+            ResultadoAsync();
         }
 
-        private async void ResultadoStatusAsync()
+        private async void ResultadoAsync()
         {
-            if (string.IsNullOrEmpty(txtLoyal.Text))
-            {
-                string poder = $"pow{cBoxPoder.SelectedValue}{txtPoder.Text}+";
-                string resist = $"tou{cBoxResist.SelectedValue}{txtResist.Text}";
-                string parametro = $"{poder}{resist}";
-                var resultado = await APISearch.GetByStatusAsync(parametro);
-                listEfeito.DataSource = resultado.data;
-                listEfeito.DisplayMember = "Name";
-                qtResultado.Text = $"{listEfeito.Items.Count.ToString()} resultados.";
-            }
-            else
-            {
-                var resultado = await APISearch.GetByStatusAsync($"loy{cBoxLoyal.SelectedValue}{txtLoyal.Text}");
-                listEfeito.DataSource = resultado.data;
-                listEfeito.DisplayMember = "Name";
-                qtResultado.Text = $"{listEfeito.Items.Count.ToString()} resultados.";
-            }
+            string par = Busca();
+            var resultado = await APISearch.GetByAdvancedAsync(par);
+            listEfeito.DataSource = resultado.data;
+            listEfeito.DisplayMember = "Name";
+            qtResultado.Text = $"{listEfeito.Items.Count.ToString()} resultados.";
         }
-
         private void listEfeito_DoubleClick(object sender, EventArgs e)
         {
             var lista = ((Datum)listEfeito.SelectedItem);
@@ -120,23 +127,88 @@ namespace MTGCatalog
                 pBoxCard.Image = pBoxCard.Image;
             }
         }
-
-        private void txtPoder_KeyDown(object sender, KeyEventArgs e)
+        private string Busca()
         {
-            if (e.KeyCode == Keys.Enter)
+            string nome;
+            if (tBoxNome.Text == "Digite o nome da carta")
             {
-                btnFnStatus_Click(this, new EventArgs());
+                nome = "";
+            }
+            else
+                nome = ($"{tBoxNome.Text}+");
+
+            string efeito;
+            if (tBoxEfeito.Text == "Digite parte do texto")
+            {
+                efeito = "";
+            }
+            else
+                efeito = ($"o:{tBoxEfeito.Text}+");
+
+            string tipo;
+            if (cbTipos.SelectedIndex == 0)
+            {
+                tipo = "";
+            }
+            else tipo = ($"t:{cbTipos.SelectedValue.ToString()}+");
+
+            string cor;
+            if (cListCores.SelectedItems.Count == 0)
+            {
+                cor = "";
+            }
+            else 
+            {
+                var listacor = this.cListCores.CheckedItems.Cast<Cores>().Select(x => x.corUrl);
+                string cores = String.Join("", listacor);
+                cor = ($"c{cBoxCorIndic.SelectedValue}{cores}+cmc{cBoxCmc.SelectedValue}{txtCusto.Text}");
+            }
+
+
+
+            string parametro = nome+efeito+tipo+cor;
+            return parametro;
+        }
+
+
+        private void tBoxNome_Enter(object sender, EventArgs e)
+        {
+            if (tBoxNome.Text == "Digite o nome da carta")
+            {
+                tBoxNome.Text = "";
+                tBoxNome.ForeColor = Color.Black;
             }
         }
 
-        private void txtResist_KeyDown(object sender, KeyEventArgs e)
+        private void tBoxNome_Leave(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (tBoxNome.Text == "")
             {
-                btnFnStatus_Click(this, new EventArgs());
+                tBoxNome.Text = "Digite o nome da carta";
+                tBoxNome.ForeColor = Color.LightGray;
+            }
+        }
+        private void txtCusto_Enter(object sender, EventArgs e)
+        {
+            if (txtCusto.Text == "Custo")
+            {
+                txtCusto.Text = "";
+                txtCusto.ForeColor = Color.Black;
             }
         }
 
+        private void txtCusto_Leave(object sender, EventArgs e)
+        {
+            if (txtCusto.Text == "")
+            {
+                txtCusto.Text = "Custo";
+                txtCusto.ForeColor = Color.LightGray;
+            }
+        }
+        private void cbTipos_KeyDown(object sender, KeyEventArgs e)
+        {
+            cbTipos.DroppedDown = false;
+        }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (comboBox1.SelectedIndex)
@@ -219,6 +291,23 @@ namespace MTGCatalog
             {
                 txtLoyal.Text = "Lealdade";
                 txtLoyal.ForeColor = Color.LightGray;
+            }
+        }
+        private void tBoxEfeito_Enter(object sender, EventArgs e)
+        {
+            if (tBoxEfeito.Text == "Digite parte do texto")
+            {
+                tBoxEfeito.Text = "";
+                tBoxEfeito.ForeColor = Color.Black;
+            }
+        }
+
+        private void tBoxEfeito_Leave(object sender, EventArgs e)
+        {
+            if (tBoxEfeito.Text == "")
+            {
+                tBoxEfeito.Text = "Digite parte do texto";
+                tBoxEfeito.ForeColor = Color.LightGray;
             }
         }
     }

@@ -99,7 +99,14 @@ namespace MTGCatalog.Services
         {
             List<Types> types = new List<Types>
         {
+                new Types("","Selecione o Tipo"),
             new Types("artifact","   Artifact"),
+            new Types("enchantment","   Enchantment"),
+            new Types("land","   Land"),
+            new Types("spell","   Spell"),
+            new Types("planeswalker","   Planeswalker"),
+            new Types("creature","   Creature"),
+            new Types("planar","   Planar"),
 new Types("attraction","Attraction"),
 new Types("blood","Blood"),
 new Types("clue","Clue"),

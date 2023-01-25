@@ -78,6 +78,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAvancado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAvancado.Designer.cs">
+      <DependentUpon>FormAvancado.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     <Compile Include="Services\APIService.cs" />
     <Compile Include="Services\CardModel.cs" />
     <Compile Include="Services\CompareAndTypes.cs" />
+    <EmbeddedResource Include="FormAvancado.resx">
+      <DependentUpon>FormAvancado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCor.resx">
       <DependentUpon>FormCor.cs</DependentUpon>
     </EmbeddedResource>
