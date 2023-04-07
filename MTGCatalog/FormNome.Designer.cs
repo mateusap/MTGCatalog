@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNome));
             this.pnlNome = new System.Windows.Forms.Panel();
+            this.qtResultado = new System.Windows.Forms.Label();
+            this.listEfeito = new System.Windows.Forms.ListBox();
             this.txtTipo = new System.Windows.Forms.TextBox();
             this.lblTipo = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -48,15 +50,13 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.btnFnNome = new System.Windows.Forms.Button();
             this.tBoxNome = new System.Windows.Forms.TextBox();
-            this.listEfeito = new System.Windows.Forms.ListBox();
-            this.qtResultado = new System.Windows.Forms.Label();
             this.pnlNome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxCard)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlNome
             // 
-            this.pnlNome.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pnlNome.BackColor = System.Drawing.Color.Gray;
             this.pnlNome.Controls.Add(this.qtResultado);
             this.pnlNome.Controls.Add(this.listEfeito);
             this.pnlNome.Controls.Add(this.txtTipo);
@@ -84,9 +84,30 @@
             this.pnlNome.Size = new System.Drawing.Size(685, 412);
             this.pnlNome.TabIndex = 17;
             // 
+            // qtResultado
+            // 
+            this.qtResultado.AutoSize = true;
+            this.qtResultado.Location = new System.Drawing.Point(542, 180);
+            this.qtResultado.Name = "qtResultado";
+            this.qtResultado.Size = new System.Drawing.Size(108, 13);
+            this.qtResultado.TabIndex = 63;
+            this.qtResultado.Text = "Resultados de Busca";
+            // 
+            // listEfeito
+            // 
+            this.listEfeito.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listEfeito.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listEfeito.FormattingEnabled = true;
+            this.listEfeito.Location = new System.Drawing.Point(527, 3);
+            this.listEfeito.Name = "listEfeito";
+            this.listEfeito.Size = new System.Drawing.Size(146, 173);
+            this.listEfeito.TabIndex = 62;
+            this.listEfeito.DoubleClick += new System.EventHandler(this.listEfeito_DoubleClick);
+            // 
             // txtTipo
             // 
-            this.txtTipo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtTipo.BackColor = System.Drawing.Color.Gray;
             this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTipo.Location = new System.Drawing.Point(156, 225);
@@ -119,7 +140,7 @@
             // 
             // txtRarityR
             // 
-            this.txtRarityR.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtRarityR.BackColor = System.Drawing.Color.Gray;
             this.txtRarityR.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRarityR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRarityR.Location = new System.Drawing.Point(156, 274);
@@ -131,7 +152,7 @@
             // 
             // txtSetR
             // 
-            this.txtSetR.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtSetR.BackColor = System.Drawing.Color.Gray;
             this.txtSetR.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSetR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSetR.Location = new System.Drawing.Point(156, 249);
@@ -143,7 +164,7 @@
             // 
             // txtCorR
             // 
-            this.txtCorR.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtCorR.BackColor = System.Drawing.Color.Gray;
             this.txtCorR.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCorR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorR.Location = new System.Drawing.Point(156, 199);
@@ -155,7 +176,7 @@
             // 
             // txtCmcR
             // 
-            this.txtCmcR.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtCmcR.BackColor = System.Drawing.Color.Gray;
             this.txtCmcR.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCmcR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCmcR.Location = new System.Drawing.Point(156, 174);
@@ -167,7 +188,7 @@
             // 
             // txtNomeR
             // 
-            this.txtNomeR.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtNomeR.BackColor = System.Drawing.Color.Gray;
             this.txtNomeR.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNomeR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeR.Location = new System.Drawing.Point(156, 135);
@@ -179,7 +200,7 @@
             // 
             // richTextR
             // 
-            this.richTextR.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.richTextR.BackColor = System.Drawing.Color.Gray;
             this.richTextR.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextR.Location = new System.Drawing.Point(156, 299);
@@ -286,27 +307,6 @@
             this.tBoxNome.Enter += new System.EventHandler(this.tBoxNome_Enter);
             this.tBoxNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBoxNome_KeyDown);
             this.tBoxNome.Leave += new System.EventHandler(this.tBoxNome_Leave);
-            // 
-            // listEfeito
-            // 
-            this.listEfeito.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listEfeito.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listEfeito.FormattingEnabled = true;
-            this.listEfeito.Location = new System.Drawing.Point(527, 3);
-            this.listEfeito.Name = "listEfeito";
-            this.listEfeito.Size = new System.Drawing.Size(146, 173);
-            this.listEfeito.TabIndex = 62;
-            this.listEfeito.DoubleClick += new System.EventHandler(this.listEfeito_DoubleClick);
-            // 
-            // qtResultado
-            // 
-            this.qtResultado.AutoSize = true;
-            this.qtResultado.Location = new System.Drawing.Point(542, 180);
-            this.qtResultado.Name = "qtResultado";
-            this.qtResultado.Size = new System.Drawing.Size(108, 13);
-            this.qtResultado.TabIndex = 63;
-            this.qtResultado.Text = "Resultados de Busca";
             // 
             // FormNome
             // 

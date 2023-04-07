@@ -25,6 +25,8 @@ namespace MTGCatalog
         {
             InitializeComponent();
             btnRestaurar.Visible = false;
+            panel2.Visible = false;
+            panel3.Visible = false;
 
         }
 
@@ -151,6 +153,16 @@ namespace MTGCatalog
             }
         }
 
-        
+        private void btnreg_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = true;
+            panel3.Visible = false;
+        }
+
+        private void btnlog_Click(object sender, EventArgs e)
+        {
+            panel2.Visible =false;
+            panel3.Visible = true;
+        }
     }
 }

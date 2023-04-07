@@ -63,7 +63,7 @@
             // pnlCor
             // 
             this.pnlCor.AutoSize = true;
-            this.pnlCor.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pnlCor.BackColor = System.Drawing.Color.Gray;
             this.pnlCor.Controls.Add(this.comboBox1);
             this.pnlCor.Controls.Add(this.cBoxLoyal);
             this.pnlCor.Controls.Add(this.txtLoyal);
@@ -157,7 +157,7 @@
             // 
             // txtTipo
             // 
-            this.txtTipo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtTipo.BackColor = System.Drawing.Color.Gray;
             this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTipo.Location = new System.Drawing.Point(156, 224);
@@ -221,7 +221,7 @@
             // 
             // txtRarityR
             // 
-            this.txtRarityR.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtRarityR.BackColor = System.Drawing.Color.Gray;
             this.txtRarityR.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRarityR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRarityR.Location = new System.Drawing.Point(156, 274);
@@ -233,7 +233,7 @@
             // 
             // txtSetR
             // 
-            this.txtSetR.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtSetR.BackColor = System.Drawing.Color.Gray;
             this.txtSetR.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSetR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSetR.Location = new System.Drawing.Point(156, 249);
@@ -245,7 +245,7 @@
             // 
             // txtCorR
             // 
-            this.txtCorR.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtCorR.BackColor = System.Drawing.Color.Gray;
             this.txtCorR.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCorR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorR.Location = new System.Drawing.Point(156, 199);
@@ -257,7 +257,7 @@
             // 
             // txtCmcR
             // 
-            this.txtCmcR.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtCmcR.BackColor = System.Drawing.Color.Gray;
             this.txtCmcR.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCmcR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCmcR.Location = new System.Drawing.Point(156, 174);
@@ -269,7 +269,7 @@
             // 
             // txtNomeR
             // 
-            this.txtNomeR.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtNomeR.BackColor = System.Drawing.Color.Gray;
             this.txtNomeR.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNomeR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeR.Location = new System.Drawing.Point(156, 135);
@@ -281,7 +281,7 @@
             // 
             // richTextR
             // 
-            this.richTextR.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.richTextR.BackColor = System.Drawing.Color.Gray;
             this.richTextR.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextR.Location = new System.Drawing.Point(156, 299);

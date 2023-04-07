@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MTGCatalog.exe" size="877536">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MTGCatalog.exe" size="897504">
       <assemblyIdentity name="MTGCatalog" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>NJPMIgsQS1bvxR45F2s5qzekVIpBR7VZvVn/8tgdeAM=</dsig:DigestValue>
+        <dsig:DigestValue>vM0s6x7JRMg5jXTcabr7PfmaagdnkK5gRRzTHo4QgNI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
