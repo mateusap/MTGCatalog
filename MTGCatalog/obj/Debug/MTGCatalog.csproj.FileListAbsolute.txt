@@ -36,3 +36,7 @@ E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.FormTipo.resources
 E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.FormCor.resources
 E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.FormStatus.resources
 E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.FormAvancado.resources
+E:\Visual Studio\MTGCatalog\MTGCatalog\bin\Debug\MTGCatalog.exe.manifest
+E:\Visual Studio\MTGCatalog\MTGCatalog\bin\Debug\MTGCatalog.application
+E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.exe.manifest
+E:\Visual Studio\MTGCatalog\MTGCatalog\obj\Debug\MTGCatalog.application

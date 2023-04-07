@@ -163,10 +163,43 @@ namespace MTGCatalog
                 string cores = String.Join("", listacor);
                 cor = ($"c{cBoxCorIndic.SelectedValue}{cores}+cmc{cBoxCmc.SelectedValue}{txtCusto.Text}");
             }
+            string poder;
+            if (txtPoder.Text == "Poder")
+            {
+                poder = "";
+            }
+            else
+            {
+                var comparador = cBoxPoder.SelectedValue.ToString();
+                var valor = txtPoder.Text;
+                poder =($"pow{comparador}{valor}+");
+            }
 
+            string resistencia;
+            if (txtResist.Text == "Resist.")
+            {
+                resistencia = "";
+            }
+            else
+            {
+                var comparador = cBoxResist.SelectedValue.ToString();
+                var valor = txtResist.Text;
+                resistencia = ($"tou{comparador}{valor}+");
+            }
 
+            string lealdade;
+            if (txtLoyal.Text == "Lealdade")
+            {
+                lealdade = "";
+            }
+            else
+            {
+                var comparador = cBoxLoyal.SelectedValue.ToString();
+                var valor = txtLoyal.Text;
+                lealdade = ($"loy{comparador}{valor}+");
+            }
 
-            string parametro = nome+efeito+tipo+cor;
+            string parametro = nome+efeito+tipo+cor+poder+resistencia+lealdade;
             return parametro;
         }
 
