@@ -44,33 +44,34 @@
             this.lblMenu = new System.Windows.Forms.Label();
             this.btnBuscaNome = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.btnreg = new System.Windows.Forms.Button();
             this.btnlog = new System.Windows.Forms.Button();
-            this.iconUser = new System.Windows.Forms.PictureBox();
-            this.iconSenha = new System.Windows.Forms.PictureBox();
-            this.iconNome = new System.Windows.Forms.PictureBox();
+            this.btnreg = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.iconSenhaLogin = new System.Windows.Forms.PictureBox();
             this.iconUserLogin = new System.Windows.Forms.PictureBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.iconNome = new System.Windows.Forms.PictureBox();
+            this.iconSenha = new System.Windows.Forms.PictureBox();
+            this.iconUser = new System.Windows.Forms.PictureBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panelCabecalho.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconSenha)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconNome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconSenhaLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconUserLogin)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconNome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconSenha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconUser)).BeginInit();
             this.SuspendLayout();
             // 
             // panelCabecalho
@@ -303,94 +304,15 @@
             this.panel1.Size = new System.Drawing.Size(685, 412);
             this.panel1.TabIndex = 46;
             // 
-            // panel2
+            // btnlog
             // 
-            this.panel2.BackColor = System.Drawing.Color.Gray;
-            this.panel2.Controls.Add(this.iconNome);
-            this.panel2.Controls.Add(this.iconSenha);
-            this.panel2.Controls.Add(this.iconUser);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(160, 73);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(501, 288);
-            this.panel2.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Gray;
-            this.panel3.Controls.Add(this.iconSenhaLogin);
-            this.panel3.Controls.Add(this.iconUserLogin);
-            this.panel3.Controls.Add(this.textBox5);
-            this.panel3.Controls.Add(this.textBox6);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(473, 17);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 213);
-            this.panel3.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(66, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "REGISTRE-SE";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(71, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "LOGIN";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(60, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(60, 169);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 2;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(60, 211);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 3;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(60, 107);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 4;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(74, 103);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 6;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(74, 56);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 5;
+            this.btnlog.Location = new System.Drawing.Point(310, 33);
+            this.btnlog.Name = "btnlog";
+            this.btnlog.Size = new System.Drawing.Size(75, 23);
+            this.btnlog.TabIndex = 3;
+            this.btnlog.Text = "Login";
+            this.btnlog.UseVisualStyleBackColor = true;
+            this.btnlog.Click += new System.EventHandler(this.btnlog_Click);
             // 
             // btnreg
             // 
@@ -402,45 +324,18 @@
             this.btnreg.UseVisualStyleBackColor = true;
             this.btnreg.Click += new System.EventHandler(this.btnreg_Click);
             // 
-            // btnlog
+            // panel3
             // 
-            this.btnlog.Location = new System.Drawing.Point(310, 33);
-            this.btnlog.Name = "btnlog";
-            this.btnlog.Size = new System.Drawing.Size(75, 23);
-            this.btnlog.TabIndex = 3;
-            this.btnlog.Text = "Login";
-            this.btnlog.UseVisualStyleBackColor = true;
-            this.btnlog.Click += new System.EventHandler(this.btnlog_Click);
-            // 
-            // iconUser
-            // 
-            this.iconUser.Image = ((System.Drawing.Image)(resources.GetObject("iconUser.Image")));
-            this.iconUser.Location = new System.Drawing.Point(16, 94);
-            this.iconUser.Name = "iconUser";
-            this.iconUser.Size = new System.Drawing.Size(33, 33);
-            this.iconUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.iconUser.TabIndex = 5;
-            this.iconUser.TabStop = false;
-            // 
-            // iconSenha
-            // 
-            this.iconSenha.Image = ((System.Drawing.Image)(resources.GetObject("iconSenha.Image")));
-            this.iconSenha.Location = new System.Drawing.Point(16, 156);
-            this.iconSenha.Name = "iconSenha";
-            this.iconSenha.Size = new System.Drawing.Size(33, 33);
-            this.iconSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.iconSenha.TabIndex = 6;
-            this.iconSenha.TabStop = false;
-            // 
-            // iconNome
-            // 
-            this.iconNome.Image = ((System.Drawing.Image)(resources.GetObject("iconNome.Image")));
-            this.iconNome.Location = new System.Drawing.Point(16, 44);
-            this.iconNome.Name = "iconNome";
-            this.iconNome.Size = new System.Drawing.Size(33, 33);
-            this.iconNome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.iconNome.TabIndex = 7;
-            this.iconNome.TabStop = false;
+            this.panel3.BackColor = System.Drawing.Color.DarkGray;
+            this.panel3.Controls.Add(this.iconSenhaLogin);
+            this.panel3.Controls.Add(this.iconUserLogin);
+            this.panel3.Controls.Add(this.textBox5);
+            this.panel3.Controls.Add(this.textBox6);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(473, 17);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 213);
+            this.panel3.TabIndex = 1;
             // 
             // iconSenhaLogin
             // 
@@ -462,11 +357,131 @@
             this.iconUserLogin.TabIndex = 7;
             this.iconUserLogin.TabStop = false;
             // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(74, 103);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.TabIndex = 6;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(74, 56);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(71, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "LOGIN";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DarkGray;
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.iconNome);
+            this.panel2.Controls.Add(this.iconSenha);
+            this.panel2.Controls.Add(this.iconUser);
+            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(160, 73);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(501, 288);
+            this.panel2.TabIndex = 0;
+            // 
+            // iconNome
+            // 
+            this.iconNome.Image = ((System.Drawing.Image)(resources.GetObject("iconNome.Image")));
+            this.iconNome.Location = new System.Drawing.Point(16, 44);
+            this.iconNome.Name = "iconNome";
+            this.iconNome.Size = new System.Drawing.Size(33, 33);
+            this.iconNome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconNome.TabIndex = 7;
+            this.iconNome.TabStop = false;
+            // 
+            // iconSenha
+            // 
+            this.iconSenha.Image = ((System.Drawing.Image)(resources.GetObject("iconSenha.Image")));
+            this.iconSenha.Location = new System.Drawing.Point(16, 156);
+            this.iconSenha.Name = "iconSenha";
+            this.iconSenha.Size = new System.Drawing.Size(33, 33);
+            this.iconSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconSenha.TabIndex = 6;
+            this.iconSenha.TabStop = false;
+            // 
+            // iconUser
+            // 
+            this.iconUser.Image = ((System.Drawing.Image)(resources.GetObject("iconUser.Image")));
+            this.iconUser.Location = new System.Drawing.Point(16, 94);
+            this.iconUser.Name = "iconUser";
+            this.iconUser.Size = new System.Drawing.Size(33, 33);
+            this.iconUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconUser.TabIndex = 5;
+            this.iconUser.TabStop = false;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(60, 107);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 4;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(60, 211);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 3;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(60, 169);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 2;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.DarkGray;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(55, 58);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(151, 16);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "Nome";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(66, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "REGISTRE-SE";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Location = new System.Drawing.Point(55, 74);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(157, 3);
+            this.panel4.TabIndex = 8;
+            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(821, 442);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
@@ -481,15 +496,15 @@
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconSenha)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconNome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconSenhaLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconUserLogin)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconNome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconSenha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconUser)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -528,6 +543,7 @@
         private System.Windows.Forms.PictureBox iconNome;
         private System.Windows.Forms.PictureBox iconSenha;
         private System.Windows.Forms.PictureBox iconUser;
+        private System.Windows.Forms.Panel panel4;
     }
 }
 
